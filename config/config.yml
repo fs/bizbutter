@@ -1,0 +1,56 @@
+defaults: &defaults
+  app_name: Handy Works
+  host: localhost:3000
+  options:
+     sex:
+       - 'male'
+       - 'female'
+     category:
+       - 'Category 1'
+       - 'Category 2'
+       - 'Category 3'
+     student:
+       - 'Full time'
+       - 'Part time'
+     type:
+       - 'Type 1'
+       - 'Type 2'
+       - 'Type 3'
+     married:
+      - 'Single'
+      - 'Married'
+      - 'Divorced'
+      - 'Widowed'
+      - 'Unknown'
+     title:
+      - 'Mr.'
+      - 'Ms.'
+      - 'Mrs.'
+      - 'Miss.'
+      - 'Dr.'
+      - 'Rev.'
+      - 'Hon.'
+      - 'Fr.'
+     work_status:
+      - 'Unemployed'
+      - 'Full'
+      - 'Part'
+      - 'Retired'
+      - 'Disabled - Not working'
+      - 'Self-Employed'
+     clinic:
+      - 'Universal Health Clinic'
+     referred_by:
+      - 'Aiken, Bill'
+      - 'Chevas Sandage'
+      - 'Free spirit'
+      - 'Geffenberg, Justin'
+      
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
