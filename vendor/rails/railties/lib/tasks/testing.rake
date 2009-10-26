@@ -56,7 +56,7 @@ namespace :test do
     since = TEST_CHANGES_SINCE
     touched = FileList['test/**/*_test.rb'].select { |path| File.mtime(path) > since } +
       recent_tests('app/models/**/*.rb', 'test/unit', since) +
-      recent_tests('app/controllers/**/*.rb', 'test/functional', since)
+      recent_tests('app/controllers/**/*.rb', 'test/functional', since)#
 
     t.libs << 'test'
     t.verbose = true

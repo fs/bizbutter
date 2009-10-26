@@ -33,3 +33,10 @@ config.gem "webrat", :version => ">=0.4.4"
 config.gem 'cucumber', :lib => false
 config.gem 'thoughtbot-shoulda', :lib => 'shoulda', :source => "http://gems.github.com"
 config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => "http://gems.github.com"
+
+#config.gem 'webrat',   :version => '= 0.4.4'
+#config.gem 'nokogiri', :version => '= 1.2.3'
+#config.gem 'cucumber', :version => '= 0.3.0'
+#config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source  => "http://gems.github.com", :version => '1.2.1'
+
+HOST = "localhost"
