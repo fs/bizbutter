@@ -1,0 +1,20 @@
+<h1><%= @deal.title %></h1>
+<%= @deal.content %>
+<br/>
+<br/>
+
+<%= @deal.published ? 'Published' : 'Not published' %>
+
+<br/>
+
+Updated <%= time_ago_in_words @deal.updated_at %> ago<br/>
+
+<h2>Measures</h2>
+<!-- list of measures -->
+<div></div>
+
+<h2>Comments</h2>
+<!-- list of comments -->
+<div></div>
+
+
