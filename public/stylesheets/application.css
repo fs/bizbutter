@@ -66,7 +66,7 @@ p {
     }
     #search form.search { text-align:right; }
     #search form.search fieldset { border:0; margin:0; padding:0; }
-    #search form.search select { font-size:0.8em; width:17em; margin-bottom:0.5em; border:1px solid #030; padding:0; }
+    #search form.search select { font-size:0.8em; width:20em; margin-bottom:0.5em; border:1px solid #030; padding:0; }
     #search form.search input#submit {
         width:auto;
         border:0;
@@ -168,13 +168,23 @@ p {
         width:45em;
         padding:1em 1em 2em 0;
         }
-        #content .main-content { margin-bottom:2em; }
-        
+        #content .main-content {
+	  margin-bottom:3em;
+	  padding:0 1em;
+	  }
+	  #content .main-content p {
+	    font-style:italic;
+	    font-family:Georgia;
+	    font-size:0.9em;
+	  }
+	  #content .main-content p strong {
+	    font-size:0.92em;
+	  }
         #content h2 { 
             padding-bottom:0.5em; 
             }
 	    
-	#content .board { width:68em; }
+	#content .board { width:68em;  }
             #content .board div.item {
                 float:left;
                 width:21.5em;
@@ -204,9 +214,9 @@ p {
     #sidebar {
         float:right;
         width:20em;
-        *width:19em;
+        *width:20em;
         _width:18.5em;
-        margin:1em 0 2em;
+        margin:0 0 2em;
     }
 
 #footer {
@@ -214,8 +224,8 @@ p {
     width:100%;
     overflow:hidden;
     color:#000;
-    border-top:3px double #999;
-    margin:2em 0 0;
+    border-top:2px solid #999;
+    margin:1em 0 0;
     }
     #footer div.banner {
       float:left;
@@ -238,3 +248,31 @@ p {
         }
     #footer p.validator { padding:0.1em 0; overflow:hidden; float:left; width:60em; }
 
+/* Sign In form */
+div#sign-in {
+  background:url('/images/mini-logo.png') 0.5em 0.5em no-repeat #030;
+  color:#fff;
+  font-size:0.7em;
+  padding:2em 1.7em 1em;
+  /*-moz-border-radius:10px;*/
+  /*-webkit-border-radius:10px;*/
+  font-family:Verdana;
+  margin:0 1em;
+  border:1px solid #000;
+  }
+  div#sign-in a { color:#fff; }
+  div#sign-in form { font-size:1em; }
+  div#sign-in form label {
+    display:block;
+    float:left;
+    text-align:right;
+    margin-right:1em;
+    width:70px;
+    font-weight:bold;
+    font-size:1.1em;
+    }
+  div#sign-in form input { width:153px; margin-bottom:0.5em; border:1px solid #000; padding:2px 0; }
+    div#sign-in form div.check label { float:none; display:inline; font-weight:normal; font-size:1em; }
+    div#sign-in form div.check input { width:auto; margin:0 0 10px 81px; }
+    div#sign-in form input.submit { width:auto; float:right; border:0; margin-right:7px; }
+  div#sign-in ul li { list-style:none; }
