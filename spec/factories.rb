@@ -1,18 +1,14 @@
-Factory.define :patient do |f|
-	f.title 'Mr'
-	f.first_name 'Name'
-	f.last_name 'Family'
-	f.email 'noreply@example.com'
-	f.nickname 'nick'
-	f.address1 'Street'
-	f.city 'City'
-	f.state 'State'
-	f.zip '12345'
-	f.phone '123-12-12'
-	f.work_phone '123-12-12'
-	f.cell_phone '123-12-12'
-	f.social_security_number '123-12-4141'
-	f.birth_date '11/11/1985'
-	f.sex 'M'
-	f.account '123456'
+Factory.define :measure_set do |f|
+  f.deal_id 12
+  f.author_id 23
+  f.title 'some'
+  f.published true
+end
+
+Factory.define :measure do |f|
+  f.set_id 1
+  f.author_id 32
+  f.title 'some title'
+  f.value 'some value'
+  f.published true
 end
