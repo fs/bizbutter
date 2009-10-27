@@ -6,7 +6,7 @@ Factory.define :measure_set do |f|
 end
 
 Factory.define :measure do |f|
-  f.set_id 1
+  f.association :set, :factory => :measure_set
   f.author_id 32
   f.title 'some title'
   f.value 'some value'
