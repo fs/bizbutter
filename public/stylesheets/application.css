@@ -23,10 +23,11 @@ body {
 
 p {
     font-size:0.8em;
+    margin-bottom:1em;
     }
 
 #container {
-    width:63em;
+    width:66em;
     margin:0 auto;
     overflow:hidden;
     *text-align:left;
@@ -38,22 +39,22 @@ p {
     padding-top:1em;
     }
 
-    #logo {
+    .logo {
         float:left;
         padding:1em 0;
         width:45em;
         font-family:Georgia;
         }
-        #logo a {
+        .logo a {
             text-decoration:none;
             color:#000;
         }
-        #logo img {
+        .logo img {
             border:0;
             float:left;
             margin-right:1em;
             }
-        #logo h1.logo {
+        .logo h1 {
             font-size:2em;
         }
 
@@ -64,7 +65,8 @@ p {
         overflow:hidden;
     }
     #search form.search { text-align:right; }
-    #search form.search input { font-size:0.8em; width:17em; margin-bottom:0.5em; border:1px solid #030; padding:0.1em; }
+    #search form.search fieldset { border:0; margin:0; padding:0; }
+    #search form.search select { font-size:0.8em; width:17em; margin-bottom:0.5em; border:1px solid #030; padding:0; }
     #search form.search input#submit {
         width:auto;
         border:0;
@@ -93,7 +95,7 @@ p {
         margin:0;
         /*width:48em;*/
         width:700px;
-        background:url('images/menu-bg.png') -1px 0 no-repeat;
+        background:url('../images/menu-bg.png') -1px 0 no-repeat;
         padding-bottom:2em;
         overflow:hidden;
         }
@@ -153,8 +155,8 @@ p {
             color:#363;
             display:block;
             position:absolute;
-            right:10.5em;
-            *right:10em;
+            right:13.5em;
+            *right:13em;
             top:0.06em;
             width:5em;
         }
@@ -167,35 +169,45 @@ p {
         padding:1em 1em 2em 0;
         }
         #content .main-content { margin-bottom:2em; }
-        #content .sub-content { }
-            #content .sub-content div {
-                float:left;
-                width:21.5em;
-                margin-right:1em;
-            }
+        
         #content h2 { 
             padding-bottom:0.5em; 
             }
-        #content h3 { 
-            padding-bottom:0.5em; 
+	    
+	#content .board { width:68em; }
+            #content .board div.item {
+                float:left;
+                width:21.5em;
+                margin:0 0 1em 1em;
+		height:3.5em;
             }
-        #content p { 
+        #content .board h3 { 
+            padding:0.2em 0 0.1em;
+	    font-family:Trebuchet MS;
+            }
+	    #content .board h3 a { color:#030; }
+	#content .board a img {
+	  float:left;
+	  margin-right:1em;
+	}
+        #content .board p a { 
             margin-bottom:0.5em; 
-            font-size:0.8em;    
+            font-size:1em;
+	    color:#000;
+	    font-family:Georgia;
             }
-            #content .sub-content p { font-size:0.7em; }
+	    #content .board h3 a,
+	    #content .board p a { text-decoration:underline }
+	    #content .board h3 a:hover,
+	    #content .board p a:hover { text-decoration:none; }
 
     #sidebar {
         float:right;
-        width:17em;
-        *width:16em;
-        _width:15.5em;
+        width:20em;
+        *width:19em;
+        _width:18.5em;
         margin:1em 0 2em;
     }
-    #sidebar .sidebar-item {
-        }
-        #sidebar .sidebar-item img { text-align:center; }
-        #sidebar .sidebar-item p { font-size:0.7em; padding-left:1em; }
 
 #footer {
     float:left;
@@ -205,18 +217,24 @@ p {
     border-top:3px double #999;
     margin:2em 0 0;
     }
-    
-    #footer #logo {
+    #footer div.banner {
+      float:left;
+      padding:1em 0;
+      }
+      #footer div.banner a { border:0; }
+      #footer div.banner a img { border:0; }
+    #footer .logo {
         float:right;
         font-size:0.5em;
-        width:31em;
-        padding:1.5em 0;
+        width:250px;
+        padding:2em 0;
         }
-        #footer #logo img {
+        #footer .logo img {
             height:3.5em;
             }
-        #footer #logo p.copy {
+        #footer .logo p.copy {
         padding:0.1em 2.5em;
-        font-size:1.35em;
+        font-size:1.5em;
         }
+    #footer p.validator { padding:0.1em 0; overflow:hidden; float:left; width:60em; }
 
