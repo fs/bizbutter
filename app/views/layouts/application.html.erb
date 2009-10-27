@@ -1,21 +1,13 @@
 <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Strict//EN" "www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>Handyworks - <%= h(yield(:title) || "Home") %></title>
+    <title>BizButter - <%= h(yield(:title) || "Home") %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= yield(:head) %>
   </head>
   <body>
     <div id="container">
-  	  <p class="name">Universal Health Clinic</p>
-
-  	  <ul class="steps">
-    		<li class="first"><a href="/">Home</a></li>
-    		<li><%= link_to "Patients", patients_path %></li>
-    		<li><a href="#">menu item 2</a></li>
-    		<li><a href="#">menu item 3</a></li>
-    		<li class="last"><a href="#">menu item 4</a></li>
-  	  </ul>
+  	  <p class="name">BizButter</p>
 
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
