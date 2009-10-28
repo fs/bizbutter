@@ -23,6 +23,9 @@ body {
 p {
     font-size:0.8em;
     }
+    
+a { color:#633; font-weight:bold; text-decoration:underline; }
+a:hover { text-decoration:none; }
 
 #container {
     width:85em;
@@ -76,39 +79,60 @@ p {
 	  #navigation ul li {
 	      float:left;
 	      list-style:none;
-	      background:#eee;
-	      margin-right:0.1em;
+	      background:#c99;
+	      margin-right:0.3em;
+	      -moz-border-radius-topleft:5px;
+	      -moz-border-radius-topright:5px;
+	      -webkit-border-top-left-radius:5px;
+	      -webkit-border-top-right-radius:5px;
 	      }
 	      #navigation ul li a {
-		  padding:0.5em 2.5em;
+		  padding:0.8em 2em;
+		  display:block;
+		  font-weight:bold;
+		  text-decoration:none;
+		  color:#000;
+		  font-size:1em;
+		  font-size:1.1em;
+		  }
+		  #navigation ul li a:hover {
+		      background:#e99;
+		      text-decoration:underline;
+		      -moz-border-radius-topleft:5px;
+		      -moz-border-radius-topright:5px;
+		      -webkit-border-top-left-radius:5px;
+		      -webkit-border-top-right-radius:5px;
+		      outline:0;
+		  }
+	    #navigation ul li.current {
+		background:#999;
+		padding:0.8em 2em;
 		  display:block;
 		  font-weight:bold;
 		  text-decoration:none;
 		  color:#333;
 		  font-size:1em;
-		  }
-		  #navigation ul li a:hover {
-		      background:#fff;
-		      text-decoration:underline;
-		      outline:0;
-		  }
+		  font-size:1.1em;
+		  color:#fff;
+	        }
 
     #content {
         float:left;
-        width:65em;
-        padding:1em 1em 2em 0;
+        /*width:65em;*/
+        padding:1em 0 2em;
+	margin:0 1em 0 0;
+	background:#999;
         }
-        #content .main-content { margin-bottom:2em; }
-        #content h2 { 
-            padding-bottom:0.5em; 
-            }
-        #content h3 { 
-            padding-bottom:0.5em; 
-            }
-        #content p { 
-            margin-bottom:0.5em; 
-            font-size:0.8em;    
-            }
+	#content table.board {
+	  width:89.4em;
+	  font-size:0.9em;
+	  margin:1em 2.5em;
+	  }
+	  #content table.board thead { background:#d99; color:#fff; }
+	      #content table.board thead th { padding:0.5em; font-size:1.2em; }
+	  #content table.board tr.first { background:#aaa; }
+	  #content table.board tr.second { background:#888; }
+	      #content table.board tr td { padding:0.5em; }
 
     #sidebar {
         float:right;
@@ -120,9 +144,10 @@ p {
     float:left;
     width:100%;
     overflow:hidden;
-    background:#eee;
+    background:#c99;
     color:#000;
-    border-top:2px solid #ddd;
+    border-top:2px solid #999;
+    margin:1em 0 0;
     }
     #footer .logo { float:right; width:21em; padding:0.5em 0; }
 	#footer .logo img { height:2.6em; padding:0; }
