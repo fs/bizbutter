@@ -115,12 +115,13 @@ a:hover { text-decoration:none; }
 
     #content {
         float:left;
-        /*width:65em;*/
+        width:60em;
         padding:1em 0 2em;
 	margin:0 1em 0 0;
 	background:#999;
 	border-bottom:2px solid #666;
         }
+	#content.home { width:auto; }
 	#content table.board {
 	  width:95.4em;
 	  font-size:0.9em;
@@ -137,12 +138,34 @@ a:hover { text-decoration:none; }
 	      #content table.board tr td h2 { font-size:1.2em; font-style:normal; }
 	      #content table.board tr td p { font-size:1em; color:#000; font-style:normal; }
 	      #content table.board tr td  a { font-style:normal; }
+	  #content div.form {
+	    padding:1em 2.5em;
+	    }
+	    #content div.form h2 { margin-bottom:1em; font-family:Trebuchet MS; font-size:2em; }
+	    #content div.form fieldset { padding:2em 1em 1em 2em; background:#888; border:2px solid #888; margin:0 0 1em; }
+		#content div.form fieldset.submit-area { background:none; border:0; }
+	    #content div.form label {
+	      display:block;
+	      float:left;
+	      width:12em;
+	      font-size:1em;
+	    }
+	    #content div.form input { margin-bottom:0.5em; padding:0.2em; }
+		#content div.form input.submit { width:auto; margin:2em 0 0; }
+	    #content div.form span.required { color:#c33; font-weight:bold; }
+	    #content div.form p { font-size:0.9em; }
 
     #sidebar {
-        float:right;
-        width:19em;
+        float:left;
+        width:25em;
         margin-bottom:2em;
-    }
+        }
+	#sidebar h3 {
+	  margin:0.5em 0;
+	  font-family:Trebuchet MS;
+	  font-size:2em;
+	}
+	#sidebar p { margin-bottom:1em; font-size:0.9em; }
 
 #footer {
     float:left;

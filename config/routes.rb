@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :deals, :has_many => :comments
+  map.resources :deals do |deals|
+    deals.resources :measure_sets, :has_many => [:measures, :comments]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 
