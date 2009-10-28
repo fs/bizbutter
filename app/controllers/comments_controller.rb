@@ -7,4 +7,11 @@ class CommentsController < ApplicationController
       redirect_to deal_path(@deal)
     end
   end
+  
+  def destroy
+    @comment = Comment.find(params[:id])
+    @deal = @comment.deal
+    @comment.destroy
+    redirect_to deal_path(@deal)
+  end
 end
