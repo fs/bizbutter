@@ -1,0 +1,52 @@
+<h1><%= @deal.title %></h1>
+
+<p><%= @deal.content %></p>
+
+<p><%= @deal.published ? 'Published' : 'Not published' %></p>
+
+<p>Updated <%= time_ago_in_words @deal.updated_at %> ago</p>
+
+<%= link_to 'Edit', edit_deal_path(@deal) if current_user && current_user.id == @deal.user_id %>
+
+<h2>Measures</h2>
+
+<div>
+  <%= render @deal.measure_sets %>
+</div>
+
+<% if @deal.user == current_user %>
+  <%= link_to "Add new measure set", new_deal_measure_set_path(@deal) %>
+<% else %>
+  <%= link_to "Recomend measure set", new_deal_measure_set_path(@deal) %>
+<% end %>
+
+<% unless @deal.comments.empty? %>
+
+<h2>Comments</h2>
+
+<div>
+  <% @deal.comments.each do |comment| %>
+  <div>
+    <%= comment.content %><br />
+    <%= comment.created_at %><br />
+    <% if comment.user %>
+      <%= comment.user.email %><br />
+      <%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete' if comment.user.id == current_user.id %>
+    <% end %>
+  </div>
+  
+  <br/>
+  
+  <% end %>
+</div>
+
+<% end %>
+
+<% if current_user %>
+
+  <% form_for [@deal, @comment]  do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit 'Post comment' %>
+  <% end %>
+
+<% end %>

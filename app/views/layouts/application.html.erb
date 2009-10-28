@@ -8,9 +8,15 @@
   </head>
   <body>
     <div id="top-menu">
-	<ul>
-	    <li class="first"><a href="/login">Log In</a></li>
-	    <li><a href="/signup">Sign Up</a></li>
+        <ul>
+                <% if current_user %>
+		    <li class="first"><%= current_user.email %></li>
+		    <li><a href="/sign_out">Log Out</a></li>
+                <% else %>
+		    <li class="first"><a href="/session/new">Log In</a></li>
+		    <li><a href="/users/new">Sign Up</a></li>
+                    
+                <% end %>
 	</ul>
     </div>
     <div id="container">
@@ -25,20 +31,7 @@
             </div>
         </div>
 	<div id="wrap">
-	    <div id="navigation">
-		<ul>
-		    <li class="current">All Deals</li>
-		    <li><a href="#">Latest Deals</a></li>
-		    <li><a href="#">Most Commented</a></li>
-		    <li><a href="#">Lorem</a></li>
-		</ul>
-	    </div>
-            <div id="content">
-                <%= yield %>
-	    </div>
-<!--	    <div id="sidebar">-->
-<!--	      <em>Sidebar</em>-->
-<!--            </div>-->
+	    <%= yield %>
         </div>
     </div>
     <div id="footer">

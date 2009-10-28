@@ -1,4 +1,17 @@
 <% title 'Home' %>
+	    <div id="navigation">
+		<ul>
+		    <li class="current">All Deals</li>
+		    <li><a href="#">Latest Deals</a></li>
+		    <li><a href="#">Most Commented</a></li>
+                <% if current_user %>
+                    <li><a href="/deals">Dashboard</a></li>
+                <% else %>
+                    <li><a href="/session/new">Join Us</a></li>
+                <% end %>
+		</ul>
+	    </div>
+            <div id="content" class="home">
                 <div class="main-content">
                     <%- if show_title? -%>
                       <!--<h2><%=h yield(:title) %></h2>-->
@@ -83,3 +96,4 @@
                       </tr>
                     </tbody>
                 </table>
+            </div>

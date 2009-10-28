@@ -1,13 +1,16 @@
 <%= form.error_messages %>
-<div class="text_field">
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-</div>
-<div class="password_field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-</div>
-<div class="password_field">
-  <%= form.label :password_confirmation, "Confirm password" %>
-  <%= form.password_field :password_confirmation %>
-</div>
+<fieldset>
+  <div class="text_field">
+    <%= form.label :email, "Email<span class='required'>*</span>" %>
+    <%= form.text_field :email %>e.g. someone@mail.com
+  </div>
+  <div class="password_field">
+    <%= form.label :password, "Password<span class='required'>*</span>" %>
+    <%= form.password_field :password %>comment about characters
+  </div>
+  <div class="password_field">
+    <%= form.label :password_confirmation, "Confirm password<span class='required'>*</span>" %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+</fieldset>
+<p><span class="required">*</span> - required fields</p>

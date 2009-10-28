@@ -1,0 +1,20 @@
+<div>
+  <h3><%= measure_set.title %></h3>
+
+  <ul>
+  <%= render measure_set.measures %>
+  </ul>
+
+  <% if @deal.user == current_user %>
+    <%= link_to "add new measure", new_deal_measure_set_measure_path(@deal, measure_set) %>
+    |
+    <%= link_to_remote "remove measure set",
+          :url => deal_measure_set_path(@deal, measure_set),
+          :method => :delete,
+          :confirm => 'sure?' %>
+    |
+    <%= link_to "edit measure set", edit_deal_measure_set_path(@deal, measure_set) %>
+  <% else %>
+    <%= link_to "recomend measure", new_deal_measure_set_measure_path(@deal, measure_set) %>
+  <% end %>
+</div>
