@@ -9,6 +9,8 @@
 
 Updated <%= time_ago_in_words @deal.updated_at %> ago<br/>
 
+<%= link_to 'Edit', edit_deal_path(@deal) if current_user && current_user.id == @deal.user_id %>
+
 <h2>Measures</h2>
 <!-- list of measures -->
 <div></div>
@@ -21,8 +23,14 @@ Updated <%= time_ago_in_words @deal.updated_at %> ago<br/>
   <div>
     <%= comment.content %><br />
     <%= comment.created_at %><br />
-    <%= comment.user.email if comment.user %><br />
+    <% if comment.user %>
+      <%= comment.user.email %><br />
+      <%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete' if comment.user.id == current_user.id %>
+    <% end %>
   </div>
+  
+  <br/>
+  
   <% end %>
 </div>
 
