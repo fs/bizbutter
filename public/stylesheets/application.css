@@ -133,9 +133,10 @@ a:hover { text-decoration:none; }
 		  #content table.board thead th.comments { width:8em; }
 	  #content table.board tr.first { background:#aaa; }
 	  #content table.board tr.second { background:#888; }
-	      #content table.board tr td { padding:0.5em; }
-	      #content table.board tr td h2 { font-size:1.2em; }
-	      #content table.board tr td p { font-size:1em; }
+	      #content table.board tr td { padding:0.5em; color:#333; font-style:italic; }
+	      #content table.board tr td h2 { font-size:1.2em; font-style:normal; }
+	      #content table.board tr td p { font-size:1em; color:#000; font-style:normal; }
+	      #content table.board tr td  a { font-style:normal; }
 
     #sidebar {
         float:right;
