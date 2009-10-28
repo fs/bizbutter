@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  #before_filter :require_user, :only => [:new, :create, :edit, :update]
+  before_filter :require_user, :only => [:new, :create, :edit, :update]
   before_filter :get_deal, :except => [:index, :new, :create]
   
   def index
@@ -7,7 +7,7 @@ class DealsController < ApplicationController
   end
   
   def show
-    
+    @comment = @deal.comments.build
   end
   
   def new
@@ -15,7 +15,7 @@ class DealsController < ApplicationController
   end
   
   def create
-    @deal = Deal.new(params[:deal])
+    @deal = current_user.deals.build(params[:deal])
     
     if @deal.save
       redirect_to deals_path
