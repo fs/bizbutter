@@ -1,23 +1,29 @@
 <h1><%= @deal.title %></h1>
-<%= @deal.content %>
-<br/>
-<br/>
 
-<%= @deal.published ? 'Published' : 'Not published' %>
+<p><%= @deal.content %></p>
 
-<br/>
+<p><%= @deal.published ? 'Published' : 'Not published' %></p>
 
-Updated <%= time_ago_in_words @deal.updated_at %> ago<br/>
+<p>Updated <%= time_ago_in_words @deal.updated_at %> ago</p>
 
 <%= link_to 'Edit', edit_deal_path(@deal) if current_user && current_user.id == @deal.user_id %>
 
 <h2>Measures</h2>
-<!-- list of measures -->
-<div></div>
+
+<div>
+  <%= render @deal.measure_sets %>
+</div>
+
+<% if @deal.user == current_user %>
+  <%= link_to "Add new measure set", new_deal_measure_set_path(@deal) %>
+<% else %>
+  <%= link_to "Recomend measure set", new_deal_measure_set_path(@deal) %>
+<% end %>
 
 <% unless @deal.comments.empty? %>
 
 <h2>Comments</h2>
+
 <div>
   <% @deal.comments.each do |comment| %>
   <div>
