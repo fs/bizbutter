@@ -1,5 +1,11 @@
-<% form_for @deal do |f| %>
-
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  
-<% end %>
+<%= render 'home/tabs' %>
+    <div class="home">
+        <div class="form short deal"
+            <% form_for @deal do |f| %>
+            
+              <%= render :partial => 'form', :locals => { :f => f } %>
+              
+            <% end %>
+        </div>
+    </div>
+</div>

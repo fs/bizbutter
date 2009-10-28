@@ -1,18 +1,12 @@
-<div id="navigation">
-    <ul>
-        <li ><a href="#">All Deals</a></li>
-        <li><a href="#">Latest Deals</a></li>
-        <li><a href="#">Most Commented</a></li>
-        <li class="current">Join Us</li>
-    </ul>
-</div>
-<div id="content">
-    <div class="form">
-        <h2>Want to Become a Member? Join us now!</h2>
-        <% form_for @user do |form| %>
-          <%= render :partial => '/users/form', :object => form %>
-          <%= form.submit 'Sign up', :disable_with => 'Please wait...', :class => 'submit' %>
-        <% end %>
+<%= render 'home/tabs' %>
+    <div class="join">
+        <div class="form">
+            <h2>Want to Become a Member? Join us now!</h2>
+            <% form_for @user do |form| %>
+              <%= render :partial => '/users/form', :object => form %>
+              <%= form.submit 'Sign up', :disable_with => 'Please wait...', :class => 'submit' %>
+            <% end %>
+        </div>
     </div>
 </div>
 <div id="sidebar">

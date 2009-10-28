@@ -1,27 +1,20 @@
-<div id="navigation">
-		<ul>
-		    <li><a href="/">All Deals</a></li>
-		    <li><a href="#">Latest Deals</a></li>
-		    <li><a href="#">Most Commented</a></li>
-		    <li class="current">Dashboard</li>
-		</ul>
-</div>
-<div id="content" class="dashboard">
-    <div class="form">
-                <% @deals.each do |deal| %>
-                  <p>
-                    <em class="title"><%= link_to deal.title, deal_path(deal) %></em>
-                    <span class="added">added <%= time_ago_in_words deal.updated_at %> ago</span>
-                    <span class="edit"><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></span>
-                  </p>
-                <% end %>
-                
-                <div>
-                <br />
-                <% if current_user %>
-                  <%= link_to 'Create a new deal', new_deal_path %>
-                <% end %>
-                
-                </div>
-    </div>
-</div>
+<%= render 'home/tabs' %>
+  <div class="home">
+      <div class="form">
+                  <% @deals.each do |deal| %>
+                    <p>
+                      <em class="title"><%= link_to deal.title, deal_path(deal) %></em>
+                      <span class="added">added <%= time_ago_in_words deal.updated_at %> ago</span>
+                      <span class="edit"><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></span>
+                    </p>
+                  <% end %>
+                  
+                  <div>
+                  <br />
+                  <% if current_user %>
+                    <%= link_to 'Create a new deal', new_deal_path %>
+                  <% end %>
+                  
+                  </div>
+      </div>
+  </div>

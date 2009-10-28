@@ -40,7 +40,7 @@ a:hover { text-decoration:none; }
       #top-menu ul li.first a { border:0; }
       
 #container {
-    width:90em;
+    width:77em;
     margin:0 auto;
     overflow:hidden;
     *text-align:left;
@@ -116,28 +116,25 @@ a:hover { text-decoration:none; }
 
     #content {
         float:left;
-        width:60em;
         padding:1em 0 2em;
 	margin:0 1em 0 0;
 	background:#999;
 	border-bottom:2px solid #666;
         }
-	#content.join { margin-bottom:5em; }
-	#content.home,
-	#content.dashboard { width:100%; }
+	#content div.join { margin-bottom:5em; width:50em; overflow:hidden; }
+	#content div.home { width:77em; }
 	#content table.board {
-	  width:95.4em;
+	  width:80em;
 	  font-size:0.9em;
 	  margin:1em 2.5em;
 	  }
 	  #content table.board thead { background:#d99; color:#fff; }
-	      #content table.board thead th { padding:0.5em; font-size:1.2em; text-align:left; }
-		  #content table.board thead th.date { width:5em; }
-		  #content table.board thead th.measures { width:7em; }
-		  #content table.board thead th.comments { width:8em; }
+	      #content table.board thead th { padding:1em; font-size:1.2em; text-align:left; }
+		  #content table.board thead th.date { width:12em; }
+		  #content table.board thead th.comments { width:10em; }
 	  #content table.board tr.first { background:#aaa; }
 	  #content table.board tr.second { background:#888; }
-	      #content table.board tr td { padding:0.5em; color:#333; font-style:italic; }
+	      #content table.board tr td { padding:1em; color:#333; font-style:italic; }
 	      #content table.board tr td h2 { font-size:1.2em; font-style:normal; }
 	      #content table.board tr td p { font-size:1em; color:#000; font-style:normal; }
 	      #content table.board tr td  a { font-style:normal; }
@@ -154,21 +151,21 @@ a:hover { text-decoration:none; }
 	      font-size:1em;
 	      font-weight:bold;
 	      }
-	      #content div.form.short  label { width:90px; padding-left:10px; }
+	      #content div.form.short  label { width:50px; padding-left:10px; }
 	      #content div.form div.check label { float:none; width:auto; margin-top:0.2em; font-weight:normal; font-size:1em; }
 	    #content div.form input { margin-bottom:1em; padding:4px; margin-right:0.5em; border:1px solid #888; }
 		#content div.form input.submit { width:auto; margin:2em 0 0; border:2px solid #d99; font-size:1.2em; }
 		#content div.form div.check input { float:left; width:auto; margin:0 0.5em 0 100px; border:0; }
 		
 	    #content div.form span.required { color:#c00; font-weight:bold; }
-	    #content div.form p { font-size:1em; margin-bottom:1em; }
+	    #content div.form p { font-size:1em; margin-bottom:3em; }
 	    
-	    #content div.form.new-deal {}
-		#content div.form.new-deal label { float: none; padding:0 0 0.5em; }
-	      	#content div.form.new-deal textarea { width:955px; height:18em; border:1px solid #999; padding:4px; }	
-		#content div.form.form.new-deal div.check input { margin:15px 0 0 0; }
-		#content div.form.form.new-deal div.check label { display:block; float:right; text-align:left; width:965px; margin:14px 0 0; }
-		#content div.form.form.new-deal input.new-deal-title { width:955px; font-weight:bold; font-size:2em; }
+	    #content div.form.deal {}
+		#content div.form.deal label { float: none; padding:0 0 0.5em; }
+	      	#content div.form.deal textarea { width:955px; height:18em; border:1px solid #999; padding:4px; }	
+		#content div.form.form.deal div.check input { margin:15px 0 0 0; }
+		#content div.form.form.deal div.check label { display:block; float:right; text-align:left; width:965px; margin:14px 0 0; }
+		#content div.form.form.deal input.new-deal-title { width:955px; font-weight:bold; font-size:2em; }
 		
 	    #content.dashboard div.form p { margin-bottom:1em; }
 		#content.dashboard div.form p em.title { font-style:normal; font-size:1em; }

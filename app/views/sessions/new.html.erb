@@ -1,38 +1,32 @@
-<div id="navigation">
-    <ul>
-        <li ><a href="#">All Deals</a></li>
-        <li><a href="#">Latest Deals</a></li>
-        <li><a href="#">Most Commented</a></li>
-        <li class="current">Join Us</li>
-    </ul>
-</div>
-<div id="content" class="join">
-    <div class="form short">
-        <h2>Login</h2>
-          <fieldset>
-          <% form_for :session, :url => session_path do |form| %>
-            <div class="text_field">
-              <%= form.label :email, "Email<span class='required'>*</span>" %>
-              <%= form.text_field :email %>We keep your email completely private.  
-            </div>
-            <div class="text_field">
-              <%= form.label :password, "Password<span class='required'>*</span>" %>
-              <%= form.password_field :password %>
-              <%= link_to "Forgot password?", new_password_path %>
-            </div>
-            <div class="text_field check">
-              <%= form.check_box :remember_me %>
-              <%= form.label :remember_me %>
-            </div>
-          </fieldset>
-          <p><span class="required">*</span> - required fields</p>
-          <fieldset class="submit-area">
-            <div class="submit_field">
-              <%= form.submit "Sign in", :disable_with => "Please wait..." %>
-            </div>
-          </fieldset>
-          <% end %>
-        
+<%= render 'home/tabs' %>
+    <div class="join">
+        <div class="form short">
+            <h2>Login</h2>
+              <fieldset>
+              <% form_for :session, :url => session_path do |form| %>
+                <div class="text_field">
+                  <%= form.label :email, "Email<span class='required'>*</span>" %>
+                  <%= form.text_field :email %>
+                </div>
+                <div class="text_field">
+                  <%= form.label :password, "Password<span class='required'>*</span>" %>
+                  <%= form.password_field :password %>
+                  <%= link_to "Forgot password?", new_password_path %>
+                </div>
+                <div class="text_field check">
+                  <%= form.check_box :remember_me %>
+                  <%= form.label :remember_me %>
+                </div>
+              </fieldset>
+              <p><span class="required">*</span> - required fields</p>
+              <fieldset class="submit-area">
+                <div class="submit_field">
+                  <%= form.submit "Sign in", :disable_with => "Please wait..." %>
+                </div>
+              </fieldset>
+              <% end %>
+            
+        </div>
     </div>
 </div>
 <div id="sidebar">
