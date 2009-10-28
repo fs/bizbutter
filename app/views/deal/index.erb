@@ -1,6 +1,0 @@
-<% @deals.each do |deal| %>
-  <h2><%= link_to deal.title, deal_path(deal) %></h2>
-  <%= time_ago_in_words deal.updated_at %>
-  <%= link_to 'Edit', edit_deal_path(deal) %>
-<% end %>
-
