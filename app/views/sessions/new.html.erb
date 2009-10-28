@@ -6,41 +6,38 @@
         <li class="current">Join Us</li>
     </ul>
 </div>
-<div id="content">
-    <div class="form">
-        <h2>Sign in</h2>
+<div id="content" class="join">
+    <div class="form login">
+        <h2>Login</h2>
           <fieldset>
           <% form_for :session, :url => session_path do |form| %>
             <div class="text_field">
-              <%= form.label :email %>
-              <%= form.text_field :email %>  
+              <%= form.label :email, "Email<span class='required'>*</span>" %>
+              <%= form.text_field :email %>We keep your email completely private.  
             </div>
             <div class="text_field">
-              <%= form.label :password %>
+              <%= form.label :password, "Password<span class='required'>*</span>" %>
               <%= form.password_field :password %>
+              <%= link_to "Forgot password?", new_password_path %>
             </div>
-            <div class="text_field">
+            <div class="text_field check">
               <%= form.check_box :remember_me %>
               <%= form.label :remember_me %>
             </div>
           </fieldset>
-          <p><span class='required'>*</span> - required fields</p>
+          <p><span class="required">*</span> - required fields</p>
           <fieldset class="submit-area">
             <div class="submit_field">
               <%= form.submit "Sign in", :disable_with => "Please wait...", :class => 'submit' %>
             </div>
           </fieldset>
           <% end %>
-        <ul>
-          <li>
-            <%= link_to "Sign up", new_user_path %>
-          </li>
-          <li>
-            <%= link_to "Forgot password?", new_password_path %>
-          </li>
-        </ul>
+        
     </div>
 </div>
 <div id="sidebar">
-    <em>Sidebar</em>
+    <h3>Not Yet a Member?</h3>
+    <p><%= link_to "Click here to sign up", new_user_path %></p>
+    <h3>Instructions</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit velit, volutpat sit amet tempor sit amet, iaculis vitae felis. Vivamus id massa et eros euismod interdum vel in mauris. Integer lacinia, nibh a euismod luctus, nulla dui cursus metus, vel scelerisque enim tortor viverra turpis. Aenean vel sapien tortor, eget hendrerit tortor. </p>
 </div>
