@@ -1,15 +1,32 @@
-<h2>Change your password</h2>
-
-<p>
-  We will email you a link to change your password.
-</p>
-
-<% form_for :password, :url => passwords_path do |form| %>
-  <div class="text_field">
-    <%= form.label :email, "Email address" %>
-    <%= form.text_field :email %>
-  </div>
-  <div class="submit_field">
-    <%= form.submit "Reset password", :disable_with => "Please wait..." %>
-  </div>
-<% end %>
+<div id="navigation">
+    <ul>
+        <li ><a href="#">All Deals</a></li>
+        <li><a href="#">Latest Deals</a></li>
+        <li><a href="#">Most Commented</a></li>
+        <li class="current">Join Us</li>
+    </ul>
+</div>
+<div id="content">
+    <div class="form join">
+        <h2>Change your password</h2>
+        
+        <p>
+          We will email you a link to change your password.
+        </p>
+        <fieldset>
+        <% form_for :password, :url => passwords_path do |form| %>
+            <div class="text_field">
+              <%= form.label :email, "Email address" %>
+              <%= form.text_field :email %>
+            </div>
+        </fieldset>
+        <fieldset class="submit-area">
+            <div class="submit_field">
+              <%= form.submit "Reset password", :disable_with => "Please wait..." %>
+            </div>
+        </fieldset>
+        <% end %>
+    </div>
+</div>
+<div id="sidebar">
+</div>

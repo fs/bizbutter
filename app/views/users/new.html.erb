@@ -7,13 +7,13 @@
     </ul>
 </div>
 <div id="content">
-  <div class="form">
-      <h2>Want to Become a Member? Join us now!</h2>
-      <% form_for @user do |form| %>
-        <%= render :partial => '/users/form', :object => form %>
-        <%= form.submit 'Sign up', :disable_with => 'Please wait...', :class => 'submit' %>
-      <% end %>
-  </div>
+    <div class="form">
+        <h2>Want to Become a Member? Join us now!</h2>
+        <% form_for @user do |form| %>
+          <%= render :partial => '/users/form', :object => form %>
+          <%= form.submit 'Sign up', :disable_with => 'Please wait...', :class => 'submit' %>
+        <% end %>
+    </div>
 </div>
 <div id="sidebar">
   <h3>That's it!</h3>
