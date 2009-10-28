@@ -1,6 +1,15 @@
 <% @deals.each do |deal| %>
   <h2><%= link_to deal.title, deal_path(deal) %></h2>
   <%= time_ago_in_words deal.updated_at %>
-  <%= link_to 'Edit', edit_deal_path(deal) %>
+  <%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %>
 <% end %>
 
+<br/><br/>
+
+<div>
+
+<% if current_user %>
+  <%= link_to 'Create a new deal', new_deal_path %>
+<% end %>
+
+</div>
