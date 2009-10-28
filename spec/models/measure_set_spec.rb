@@ -6,9 +6,9 @@ describe MeasureSet do
     @measure_set = Factory.create(:measure_set)
   end
 
-  it { should validate_presence_of :title }
-  it { should validate_presence_of :author_id }
-  it { should validate_presence_of :deal_id }
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:author_id) }
+  it { should validate_presence_of(:deal_id) }
 
   it "should create a new instance given valid attributes" do
     Factory.create(:measure_set)
