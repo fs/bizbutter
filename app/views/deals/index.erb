@@ -6,7 +6,7 @@
 		    <li class="current">Dashboard</li>
 		</ul>
 </div>
-<div id="content">
+<div id="content" class="dashboard">
     <div class="form">
                 <% @deals.each do |deal| %>
                   <h2><%= link_to deal.title, deal_path(deal) %></h2>

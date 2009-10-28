@@ -154,13 +154,20 @@ a:hover { text-decoration:none; }
 	      font-size:1em;
 	      font-weight:bold;
 	      }
-	      #content div.form.login  label { width:90px; padding-left:10px; }
+	      #content div.form.short  label { width:90px; padding-left:10px; }
 	      #content div.form div.check label { float:none; width:auto; margin-top:0.2em; font-weight:normal; font-size:1em; }
 	    #content div.form input { margin-bottom:1em; padding:4px; margin-right:0.5em; border:1px solid #888; }
 		#content div.form input.submit { width:auto; margin:2em 0 0; border:2px solid #d99; font-size:1.2em; }
 		#content div.form div.check input { float:left; width:auto; margin:0 0.5em 0 100px; border:0; }
+		
 	    #content div.form span.required { color:#c00; font-weight:bold; }
 	    #content div.form p { font-size:1em; margin-bottom:1em; }
+	    
+	    #content div.form.new-deal {}
+	      	#content div.form.new-deal textarea { width:783px; height:18em; border:1px solid #999; }	
+		#content div.form.form.new-deal div.check input { margin:15px 0 0 100px; }
+		#content div.form.form.new-deal div.check label { display:block; float:right; text-align:left; width:855px; margin:15px 0 0; }
+		#content div.form.form.new-deal input.new-deal-title { width:775px; }
 
     #sidebar {
         float:left;
@@ -193,6 +200,7 @@ a:hover { text-decoration:none; }
     #footer .validator { padding:1.5em 0 0 1em; float:left; width:20em; }
     
 #content div.form .errorExplanation { margin-bottom:1em; }
+#content div.form.new-deal .errorExplanation { margin-bottom:3em; }
 #content div.form .errorExplanation h2 { display:none; }
 #content div.form .errorExplanation p { font-size:1em; margin-bottom:0.5em; }
 #content div.form .errorExplanation ul li { list-style:disc inside; }
