@@ -1,1 +1,10 @@
-<p><%= measure.title %>: <%= measure.value %></p>
+<li>
+  <%= measure.title %>:
+  <%= measure.value %>
+  <span class="on_edit">
+    <%= link_to_remote "remove measure",
+          :url => deal_measure_set_measure_path(@deal, measure.set, measure),
+          :method => :delete,
+          :confirm => 'sure?' %>
+  </span>
+</li>
