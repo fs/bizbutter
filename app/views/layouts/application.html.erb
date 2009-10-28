@@ -7,6 +7,12 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="top-menu">
+	<ul>
+	    <li class="first"><a href="/login">Log In</a></li>
+	    <li><a href="/signup">Sign Up</a></li>
+	</ul>
+    </div>
     <div id="container">
 	<%- flash.each do |name, msg| -%>
 	  <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
@@ -17,12 +23,6 @@
                     <img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" />
 		</a>
             </div>
-	    <div id="top-menu">
-	      <ul>
-		<li class="first"><a href="#">Log In</a></li>
-		<li><a href="#">Sign Up</a></li>
-	      </ul>
-	    </div>
         </div>
 	<div id="wrap">
 	    <div id="navigation">
@@ -40,20 +40,17 @@
 <!--	      <em>Sidebar</em>-->
 <!--            </div>-->
         </div>
-        <div id="footer">
-            <div class="logo">
-                <a href="/">
-                    <img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" />
-		</a>
-                <p class="copy">&copy; 2009</p>
-            </div>
-	    <p class="validator">
-	      <a href="http://validator.w3.org/check?uri=referer"><img
-		  src="http://www.w3.org/Icons/valid-xhtml10-blue"
-		  alt="Valid XHTML 1.0 Strict" height="31" width="88" />
-	      </a>
-	    </p>
+    </div>
+    <div id="footer">
+        <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
+            <p class="copy">&copy; 2009</p>
         </div>
+	<p class="validator">
+	    <a href="http://validator.w3.org/check?uri=referer">
+	        <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+	    </a>
+	</p>
     </div>
   </body>
 </html>
