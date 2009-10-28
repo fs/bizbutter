@@ -10,7 +10,8 @@
     <div id="top-menu">
         <ul>
                 <% if current_user %>
-		    <li class="first"><a href="/logout">Log Out</a></li>
+		    <li class="first"><%= current_user.email %></li>
+		    <li><a href="/sign_out">Log Out</a></li>
                 <% else %>
 		    <li class="first"><a href="/session/new">Log In</a></li>
 		    <li><a href="/users/new">Sign Up</a></li>

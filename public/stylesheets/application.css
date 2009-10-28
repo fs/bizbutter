@@ -27,6 +27,18 @@ p {
 a { color:#633; font-weight:bold; text-decoration:underline; }
 a:hover { text-decoration:none; }
 
+#top-menu {
+      overflow:hidden;
+      }
+      #top-menu ul { float:right; padding:1em 2em 0 0; }
+      #top-menu ul li { list-style:none; float:left; margin-left:1em; font-weight:bold; }
+      #top-menu ul li a {
+	border-left:2px solid #000;
+	padding-left:1em;
+	font-size:1em;
+	color:#000; }
+      #top-menu ul li.first a { border:0; }
+      
 #container {
     width:90em;
     margin:0 auto;
@@ -50,18 +62,6 @@ a:hover { text-decoration:none; }
             margin-right:1em;
 	    padding:4em 0 1em;
             }
-    #top-menu {
-      overflow:hidden;
-      }
-      #top-menu ul { float:right; padding:1em 2em 0 0; }
-      #top-menu ul li { list-style:none; float:left; margin-left:1em; }
-      #top-menu ul li a {
-	border-left:2px solid #000;
-	padding-left:1em;
-	font-weight:bold;
-	font-size:1em;
-	color:#000; }
-      #top-menu ul li.first a { border:0; }
       
 #wrap {}
 
@@ -164,10 +164,16 @@ a:hover { text-decoration:none; }
 	    #content div.form p { font-size:1em; margin-bottom:1em; }
 	    
 	    #content div.form.new-deal {}
-	      	#content div.form.new-deal textarea { width:783px; height:18em; border:1px solid #999; }	
-		#content div.form.form.new-deal div.check input { margin:15px 0 0 100px; }
-		#content div.form.form.new-deal div.check label { display:block; float:right; text-align:left; width:855px; margin:15px 0 0; }
-		#content div.form.form.new-deal input.new-deal-title { width:775px; }
+		#content div.form.new-deal label { float: none; padding:0 0 0.5em; }
+	      	#content div.form.new-deal textarea { width:955px; height:18em; border:1px solid #999; padding:4px; }	
+		#content div.form.form.new-deal div.check input { margin:15px 0 0 0; }
+		#content div.form.form.new-deal div.check label { display:block; float:right; text-align:left; width:965px; margin:14px 0 0; }
+		#content div.form.form.new-deal input.new-deal-title { width:955px; font-weight:bold; font-size:1.2em; }
+		
+	    #content.dashboard div.form p { margin-bottom:1em; }
+		#content.dashboard div.form p em.title { font-style:normal; font-size:1em; }
+		    #content.dashboard div.form p em.title a { color:#000; }
+		    #content.dashboard div.form p span.added { font-style:italic; color:#333; }
 
     #sidebar {
         float:left;

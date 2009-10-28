@@ -9,15 +9,15 @@
 <div id="content" class="dashboard">
     <div class="form">
                 <% @deals.each do |deal| %>
-                  <h2><%= link_to deal.title, deal_path(deal) %></h2>
-                  <%= time_ago_in_words deal.updated_at %>
-                  <%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %>
+                  <p>
+                    <em class="title"><%= link_to deal.title, deal_path(deal) %></em>
+                    <span class="added">added <%= time_ago_in_words deal.updated_at %> ago</span>
+                    <span class="edit"><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></span>
+                  </p>
                 <% end %>
                 
-                <br/><br/>
-                
                 <div>
-                
+                <br />
                 <% if current_user %>
                   <%= link_to 'Create a new deal', new_deal_path %>
                 <% end %>
