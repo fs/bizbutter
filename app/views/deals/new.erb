@@ -1,5 +1,17 @@
-<% form_for @deal do |f| %>
-  
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  
-<% end %>
+<div id="navigation">
+		<ul>
+		    <li><a href="#">All Deals</a></li>
+		    <li><a href="#">Latest Deals</a></li>
+		    <li><a href="#">Most Commented</a></li>
+		    <li class="current">Dashboard</li>
+		</ul>
+</div>
+<div id="content" class="dashboard">
+    <div class="form">
+        <% form_for @deal do |f| %>
+          
+          <%= render :partial => 'form', :locals => { :f => f } %>
+          
+        <% end %>
+    </div>
+</div>
