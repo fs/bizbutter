@@ -15,35 +15,28 @@ body {
     padding:0;  
     height:100%;
     font-size:100.01%;
-    font-family:Verdana,Arial,sans-serif;  
+    font-family:Verdana,Arial,sens-serif;  
     position:relative;
-    color:#333;
     *text-align:center;
 } 
 
 p {
     font-size:0.8em;
-    margin-bottom:1em;
     }
 
 #container {
-    width:66em;
+    width:85em;
     margin:0 auto;
     overflow:hidden;
     *text-align:left;
-    font-size:1.25em;
     }
 
 #header {
     overflow:hidden;
-    padding-top:1em;
     }
-
     .logo {
-        float:left;
-        padding:1em 0;
+        padding-bottom:1em;
         width:45em;
-        font-family:Georgia;
         }
         .logo a {
             text-decoration:none;
@@ -53,226 +46,88 @@ p {
             border:0;
             float:left;
             margin-right:1em;
+	    padding:3em 0 1em;
             }
-        .logo h1 {
-            font-size:2em;
-        }
-
-    #search {
-        float:right;
-        padding:1em 0 0 0;
-        width:18em;
-        overflow:hidden;
-    }
-    #search form.search { text-align:right; }
-    #search form.search fieldset { border:0; margin:0; padding:0; }
-    #search form.search select { font-size:0.8em; width:20em; margin-bottom:0.5em; border:1px solid #030; padding:0; }
-    #search form.search input#submit {
-        width:auto;
-        border:0;
-        background:#000;
-        clear:both;
-        display:block;
-        float:right;
-        margin-left:10em;
-        width:4em;
-        padding:0.05em 0;
-        cursor:pointer;
-        font-size:0.9em;
-        color:#fff;
-        }
-        #search form.search input#submit:hover { background:#333; }
-
-#navigation {
-    float:left;
-    overflow:hidden;
-    background:#fff;
-    margin-top:1em;
-    width:100%;
-    position:relative;
-    }
-    #navigation ul {
-        margin:0;
-        /*width:48em;*/
-        width:700px;
-        background:url('../images/menu-bg.png') -1px 0 no-repeat;
-        padding-bottom:2em;
-        overflow:hidden;
-        }
-        #navigation ul li {
-            float:left;
-            list-style:none;
-            background:#030;
-            margin-right:2px;
-            height:18px;
-            }
-            #navigation ul li.free { width:140px; }
-            #navigation ul li.about-us { width:159px; }
-            #navigation ul li.advertise-us { width:220px; }
-            #navigation ul li.sitemap { width:150px; }
-            
-            #navigation ul li.about-us a { width:157px; }
-            #navigation ul li.advertise-us a { width:217px; }
-            
-            #navigation ul li a {
-                padding:2px 0;
-                display:block;
-                font-weight:bold;               
-                color:#fff;
-                font-size:0.8em;
-                /*font-style:italic;*/
-                text-align:center;
-                }
-                #navigation ul li a:hover {
-                    background:#033;
-                    text-decoration:none;
-                    outline:0;
-                }
-            #navigation ul li.free {
-                position:relative;
-                }
-                #navigation ul li.free a { padding-right:15px; }
-                #navigation ul li span.free {
-                    text-transform:lowercase;
-                    color:#0c0;
-                    font-size:0.6em;
-                    position:absolute;
-                    top:0;
-                    right:35px;
-                    font-weight:bold;
-                    font-style:italic;
-                    font-family:Verdana, Arial, sans-serif;
-                }
-            #navigation ul li.sitemap {
-                background:#000;
-                }
-                #navigation ul li.sitemap a { font-style:normal; }
-                #navigation ul li.sitemap a:hover { background:#333; }
-        #navigation span.share {
-            background:transparent url(http://w.sharethis.com/images/share-icon-16x16.png?CXNID=1000014.0NXC) no-repeat scroll 0 0 !important;
-            padding-left:1.5em;
-            margin-left:0.5em;
-            color:#363;
-            display:block;
-            position:absolute;
-            right:13.5em;
-            *right:13em;
-            top:0.06em;
-            width:5em;
-        }
-
+    #top-menu {
+      float:right;
+      }
+      #top-menu ul {}
+      #top-menu ul li { list-style:none; float:left; margin-left:1em; }
+      #top-menu ul li a {
+	border-left:2px solid #000;
+	padding-left:1em;
+	font-weight:bold;
+	font-size:1em;
+	color:#000; }
+      #top-menu ul li.first a { border:0; }
+      
 #wrap {}
+
+  #navigation {
+      width:65em;
+      padding:0 1em 0 0;
+      float:left;
+      overflow:hidden;
+      }
+      #navigation ul {
+	  margin:0.5em 0;
+	  width:48em;
+	  }
+	  #navigation ul li {
+	      float:left;
+	      list-style:none;
+	      background:#eee;
+	      margin-right:0.1em;
+	      }
+	      #navigation ul li a {
+		  padding:0.5em 2.5em;
+		  display:block;
+		  font-weight:bold;
+		  text-decoration:none;
+		  color:#333;
+		  font-size:1em;
+		  }
+		  #navigation ul li a:hover {
+		      background:#fff;
+		      text-decoration:underline;
+		      outline:0;
+		  }
 
     #content {
         float:left;
-        width:45em;
+        width:65em;
         padding:1em 1em 2em 0;
         }
-        #content .main-content {
-	  margin-bottom:3em;
-	  padding:0 1em;
-	  }
-	  #content .main-content p {
-	    font-style:italic;
-	    font-family:Georgia;
-	    font-size:0.9em;
-	  }
-	  #content .main-content p strong {
-	    font-size:0.92em;
-	  }
+        #content .main-content { margin-bottom:2em; }
         #content h2 { 
             padding-bottom:0.5em; 
             }
-	    
-	#content .board { width:68em;  }
-            #content .board div.item {
-                float:left;
-                width:21.5em;
-                margin:0 0 1em 1em;
-		height:3.5em;
+        #content h3 { 
+            padding-bottom:0.5em; 
             }
-        #content .board h3 { 
-            padding:0.2em 0 0.1em;
-	    font-family:Trebuchet MS;
-            }
-	    #content .board h3 a { color:#030; }
-	#content .board a img {
-	  float:left;
-	  margin-right:1em;
-	}
-        #content .board p a { 
+        #content p { 
             margin-bottom:0.5em; 
-            font-size:1em;
-	    color:#000;
-	    font-family:Georgia;
+            font-size:0.8em;    
             }
-	    #content .board h3 a,
-	    #content .board p a { text-decoration:underline }
-	    #content .board h3 a:hover,
-	    #content .board p a:hover { text-decoration:none; }
 
     #sidebar {
         float:right;
-        width:20em;
-        *width:20em;
-        _width:18.5em;
-        margin:0 0 2em;
+        width:19em;
+        margin-bottom:2em;
     }
 
 #footer {
     float:left;
     width:100%;
     overflow:hidden;
+    background:#eee;
     color:#000;
-    border-top:2px solid #999;
-    margin:1em 0 0;
+    border-top:2px solid #ddd;
     }
-    #footer div.banner {
-      float:left;
-      padding:1em 0;
-      }
-      #footer div.banner a { border:0; }
-      #footer div.banner a img { border:0; }
-    #footer .logo {
-        float:right;
-        font-size:0.5em;
-        width:250px;
-        padding:2em 0;
+    #footer .logo { float:right; width:21em; padding:0.5em 0; }
+	#footer .logo img { height:2.6em; padding:0; }
+	#footer p.copy {
+        padding:0.2em 0.5em;
+        font-size:0.8em;
         }
-        #footer .logo img {
-            height:3.5em;
-            }
-        #footer .logo p.copy {
-        padding:0.1em 2.5em;
-        font-size:1.5em;
-        }
-    #footer p.validator { padding:0.1em 0; overflow:hidden; float:left; width:60em; }
-
-/* Sign In form */
-div#sign-in {
-  background:url('/images/mini-logo.png') 0.5em 0.5em no-repeat #030;
-  color:#fff;
-  font-size:0.7em;
-  padding:2em 1.7em 1em;
-  /*-moz-border-radius:10px;*/
-  /*-webkit-border-radius:10px;*/
-  font-family:Verdana;
-  margin:0 1em;
-  border:1px solid #000;
-  }
-  div#sign-in a { color:#fff; }
-  div#sign-in form { font-size:1em; }
-  div#sign-in form label {
-    display:block;
-    float:left;
-    text-align:right;
-    margin-right:1em;
-    width:70px;
-    font-weight:bold;
-    font-size:1.1em;
-    }
-  div#sign-in form input { width:153px; margin-bottom:0.5em; border:1px solid #000; padding:2px 0; }
-    div#sign-in form div.check label { float:none; display:inline; font-weight:normal; font-size:1em; }
-    div#sign-in form div.check input { width:auto; margin:0 0 10px 81px; }
-    div#sign-in form input.submit { width:auto; float:right; border:0; margin-right:7px; }
-  div#sign-in ul li { list-style:none; }
+    #footer .validator { padding:1.5em 0 0 1em; float:left; width:20em; }
