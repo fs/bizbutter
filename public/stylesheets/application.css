@@ -162,10 +162,10 @@ a:hover { text-decoration:none; }
 	    
 	    #content div.form.deal {}
 		#content div.form.deal label { float: none; padding:0 0 0.5em; }
-	      	#content div.form.deal textarea { width:955px; height:18em; border:1px solid #999; padding:4px; }	
+	      	#content div.form.deal textarea { width:820px; height:18em; border:1px solid #999; padding:4px; }	
 		#content div.form.form.deal div.check input { margin:15px 0 0 0; }
 		#content div.form.form.deal div.check label { display:block; float:right; text-align:left; width:965px; margin:14px 0 0; }
-		#content div.form.form.deal input.new-deal-title { width:955px; font-weight:bold; font-size:2em; }
+		#content div.form.form.deal input.new-deal-title { width:820px; font-weight:bold; font-size:2em; }
 		
 	    #content.dashboard div.form p { margin-bottom:1em; }
 		#content.dashboard div.form p em.title { font-style:normal; font-size:1em; }
