@@ -7,6 +7,12 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="top-menu">
+	<ul>
+	    <li class="first"><a href="/login">Log In</a></li>
+	    <li><a href="/signup">Sign Up</a></li>
+	</ul>
+    </div>
     <div id="container">
 	<%- flash.each do |name, msg| -%>
 	  <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
@@ -16,84 +22,35 @@
                 <a href="/">
                     <img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" />
 		</a>
-                <h1><a href="/">Sustainable Communities</a></h1>
-                <em>people - places - progress</em>
-            </div>
-            <div id="search">
-                <form action="#" class="search" >
-		  <fieldset>
-                    <select type="text" >
-		      <option>Search Places</option>
-		    </select>
-                    <select type="text">
-		      <option>Search Categories</option>
-		    </select>
-                    <input type="submit" id="submit"  value="Search" />
-		  </fieldset>
-                </form>
             </div>
         </div>
-        <div id="navigation">
-            <ul>
-                <li class="free"><a href="#">Post</a><span class="free">FREE</span></li>
-                <li class="about-us"><a href="#">About Us</a></li>
-                <li class="advertise-us"><a href="#">Advertise With Us</a></li>
-                <li class="sitemap"><a href="#">Sitemap</a></li>
-            </ul>
-            <span class="share">ShareThis</span>
-        </div>
-        <div id="wrap">
+	<div id="wrap">
+	    <div id="navigation">
+		<ul>
+		    <li class="current">All Deals</li>
+		    <li><a href="#">Latest Deals</a></li>
+		    <li><a href="#">Most Commented</a></li>
+		    <li><a href="#">Lorem</a></li>
+		</ul>
+	    </div>
             <div id="content">
                 <%= yield %>
 	    </div>
-	    <div id="sidebar">
-	      <div id="sign-in">
-		  <% form_for :session, :url => session_path do |form| %>
-		    <div class="text_field">
-		      <%= form.label :email %>
-		      <%= form.text_field :email %>  
-		    </div>
-		    <div class="text_field">
-		      <%= form.label :password %>
-		      <%= form.password_field :password %>
-		    </div>
-		    <div class="text_field check">
-		      <%= form.check_box :remember_me %>
-		      <%= form.label :remember_me %>
-		    </div>
-		    <div class="submit_field">
-		      <%= form.submit "Sign in", :disable_with => "Please wait...", :class => "submit" %>
-		    </div>
-		  <% end %>
-		  <ul>
-		    <li>
-		      <%= link_to "Sign up", new_user_path %>
-		    </li>
-		    <li>
-		      <%= link_to "Forgot password?", new_password_path %>
-		    </li>
-		  </ul>
-		</div>
-            </div>
+<!--	    <div id="sidebar">-->
+<!--	      <em>Sidebar</em>-->
+<!--            </div>-->
         </div>
-        <div id="footer">
-	    <div class="banner">
-	      <a href="#"><img src="/images/banner.gif" alt="" /></a>
-	    </div>
-            <div class="logo">
-                <a href="/">
-                    <img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" />
-		</a>
-                <h1><a href="/">Sustainable Communities</a></h1>
-                <p class="copy">&copy; 2009</p>
-            </div>
-	    <p class="validator">
-	      <a href="http://validator.w3.org/check?uri=referer"><img
-		  src="http://www.w3.org/Icons/valid-xhtml10-blue"
-		  alt="Valid XHTML 1.0 Strict" height="31" width="88" />
-	      </a>
-	    </p>
+    </div>
+    <div id="footer">
+        <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
+            <p class="copy">&copy; 2009</p>
         </div>
+	<p class="validator">
+	    <a href="http://validator.w3.org/check?uri=referer">
+	        <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+	    </a>
+	</p>
     </div>
   </body>
 </html>

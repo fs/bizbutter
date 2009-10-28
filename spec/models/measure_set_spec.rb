@@ -1,17 +1,20 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../factories')
 
 describe MeasureSet do
   before(:each) do
-    @valid_attributes = {
-      :deal_id => 1,
-      :title => "value for title",
-      :author_id => 1,
-      :published => false
-    }
+    @measure_set = Factory.create(:measure_set)
   end
 
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:author_id) }
+  it { should validate_presence_of(:deal_id) }
+
   it "should create a new instance given valid attributes" do
-    MeasureSet.create!(@valid_attributes)
+    Factory.create(:measure_set)
   end
-  
+
+  it 'should be valid with a full set of valid attributes' do
+    @measure_set.should be_valid
+  end
 end
