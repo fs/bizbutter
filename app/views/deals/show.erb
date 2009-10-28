@@ -16,18 +16,28 @@
             <div>
               <%= render @deal.measure_sets %>
             </div>
-            
-            <% if @deal.user == current_user %>
-              <%= link_to "Add new measure set", "#show_hide_new_measure_set_form" %>
 
-              <% form_for [@deal, @deal.measure_sets.new] do |f| %>
+            <% if @deal.user == current_user %>
+              <h3>Add new measure set</h3>
+
+              <% form_for [@deal, @measure_set] do |f| %>
                 <%= f.label :title, "measure_set title: " %>
                 <%= f.text_field :title %>
-                <%= f.label :published, f.check_box(:published) + " published" %>
-                <%= f.submit "create" %>
+                <%= f.check_box(:published) %>
+                <%= f.label :published, "published" %>
+
+                <% f.fields_for :measures do |mf| %>
+                  <br />
+                  <%= mf.text_field :title %>
+                  <%= mf.text_field :value %>
+                  <%= mf.check_box :published %>
+                  <%= mf.label :published, "published" %>
+                <% end %>
+
+                <%= submit_tag %>
               <% end %>
             <% end %>
-            
+
             <% unless @deal.comments.empty? %>
             
             <h2>Comments</h2>
