@@ -28,7 +28,7 @@ a { color:#633; font-weight:bold; text-decoration:underline; }
 a:hover { text-decoration:none; }
 
 #container {
-    width:85em;
+    width:90em;
     margin:0 auto;
     overflow:hidden;
     *text-align:left;
@@ -38,7 +38,6 @@ a:hover { text-decoration:none; }
     overflow:hidden;
     }
     .logo {
-        padding-bottom:1em;
         width:45em;
         }
         .logo a {
@@ -49,12 +48,12 @@ a:hover { text-decoration:none; }
             border:0;
             float:left;
             margin-right:1em;
-	    padding:3em 0 1em;
+	    padding:1em 0;
             }
     #top-menu {
-      float:right;
+      overflow:hidden;
       }
-      #top-menu ul {}
+      #top-menu ul { float:right; padding:1em 2em 0 0; }
       #top-menu ul li { list-style:none; float:left; margin-left:1em; }
       #top-menu ul li a {
 	border-left:2px solid #000;
@@ -90,14 +89,12 @@ a:hover { text-decoration:none; }
 		  padding:0.8em 2em;
 		  display:block;
 		  font-weight:bold;
-		  text-decoration:none;
 		  color:#000;
 		  font-size:1em;
 		  font-size:1.1em;
 		  }
 		  #navigation ul li a:hover {
 		      background:#e99;
-		      text-decoration:underline;
 		      -moz-border-radius-topleft:5px;
 		      -moz-border-radius-topright:5px;
 		      -webkit-border-top-left-radius:5px;
@@ -122,17 +119,23 @@ a:hover { text-decoration:none; }
         padding:1em 0 2em;
 	margin:0 1em 0 0;
 	background:#999;
+	border-bottom:2px solid #666;
         }
 	#content table.board {
-	  width:89.4em;
+	  width:95.4em;
 	  font-size:0.9em;
 	  margin:1em 2.5em;
 	  }
 	  #content table.board thead { background:#d99; color:#fff; }
-	      #content table.board thead th { padding:0.5em; font-size:1.2em; }
+	      #content table.board thead th { padding:0.5em; font-size:1.2em; text-align:left; }
+		  #content table.board thead th.date { width:5em; }
+		  #content table.board thead th.measures { width:7em; }
+		  #content table.board thead th.comments { width:8em; }
 	  #content table.board tr.first { background:#aaa; }
 	  #content table.board tr.second { background:#888; }
 	      #content table.board tr td { padding:0.5em; }
+	      #content table.board tr td h2 { font-size:1.2em; }
+	      #content table.board tr td p { font-size:1em; }
 
     #sidebar {
         float:right;
