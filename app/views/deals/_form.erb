@@ -1,0 +1,21 @@
+
+  <div>
+    <%= f.error_messages %>
+  </div>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  
+  <div>
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+  
+  <%= f.submit :save %>
