@@ -4,7 +4,7 @@ class DealsController < ApplicationController
   
   def index
     @deals = Deal.paginate(
-      :order    => 'published DESC, updated_at DESC',
+      :order    => 'updated_at DESC',
       :page     => params[:page],
       :per_page => Deal::DEALS_PER_PAGE
     )
@@ -27,7 +27,7 @@ class DealsController < ApplicationController
         session[:deals] << @deal.id
       end
       flash[:notice] = "Successfully created a deal"
-      redirect_to deals_path
+      redirect_to @deal
     else
       render 'new'
     end

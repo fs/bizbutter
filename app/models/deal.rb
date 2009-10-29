@@ -12,6 +12,5 @@ class Deal < ActiveRecord::Base
   
   def editable_by? (user)
     user && user.id == self.user.id
-  end
-  
+  end  
 end
