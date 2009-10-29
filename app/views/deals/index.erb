@@ -1,6 +1,3 @@
-<div class="create-new-deal">
-                    <%= link_to 'Create a new deal', new_deal_path %>
-</div>
 <%= render 'home/tabs', :locals => { :current_tab => 'my' } %>
   <div class="home">
       <div class="form">
@@ -24,9 +21,7 @@
                         <h3><%= link_to deal.title, deal_path(deal) %></h3>
                     </td>
                     <td>
-                    <% if deal.comments.length > 0 %>
                         <p><%= link_to pluralize(deal.comments.length, 'comment'), deal_path(deal) + '#comments' %></p>
-                    <% end %>
                     </td>
                     <td><%= time_ago_in_words deal.updated_at %> ago</td>
                     <td><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></td>

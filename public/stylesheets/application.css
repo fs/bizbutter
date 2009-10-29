@@ -44,6 +44,7 @@ a:hover { text-decoration:none; }
     width:77em;
     margin:0 auto;
     overflow:hidden;
+    position:relative;
     *text-align:left;
     }
 
@@ -226,9 +227,9 @@ a:hover { text-decoration:none; }
 #content div.form .fieldWithErrors label { font-weight:bold; color:#c00; }
 #content div.form .fieldWithErrors input { border:1px solid #c33; }
 
-div.notice { background:#696; float:left; position:absolute; top:1em; left:1em; padding:1em; color:#fff; font-weight:bold; }
+div.notice { background:#696; float:left; position:absolute; top:0; left:0; padding:1em; color:#fff; font-weight:bold; }
 
-div.create-new-deal { position:absolute; right:4em; top:6.5em; }
+div.create-new-deal { position:absolute; right:0em; top:10em; }
     div.create-new-deal a {
 	cursor:pointer;
 	color:#fff;

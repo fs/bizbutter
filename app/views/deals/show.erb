@@ -3,8 +3,7 @@
         <div class="form deal">
 
             <h1><%= @deal.title %></h1>
-            
-            <p style="background:#888; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; "><em><%= @deal.content %></em></p>
+            <p style="background:#888; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; "><em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em></p>
             
             <p style="color:#333; font-weight:bold; "><%= @deal.published ? 'Published' : 'Not published' %></p>
             
@@ -19,7 +18,9 @@
                 <%= f.render_associated_form(@deal.measure_sets) %>
               </div>
               <p style="margin-bottom:2em;"><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
-              <p><%= f.submit %></p>
+              <fieldset class="submit-area">
+                  <%= f.submit %>
+              </fieldset>
             <% end %>
 
             <% if @deal.comments %>
