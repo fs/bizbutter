@@ -7,32 +7,38 @@
         <em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em>
       </p>
     
-      <p style="color:#333; font-weight:bold; "><%= @deal.published ? 'Published' : 'Not published' %></p>
+      <p style="color:#333; font-weight:bold;"><%= @deal.published ? 'Published' : 'Not published' %></p>
     
       <p style="color:#333;">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
-    
+      
       <%= link_to 'Edit', edit_deal_path(@deal) if @deal.editable_by?(current_user) %>
-
+      
       <h2>Measures</h2>
-
-      <% form_for @deal do |f| %>
-        <div id="measure_sets">
-          <%= f.render_associated_form(@deal.measure_sets) %>
-        </div>
-        <p style="margin-bottom:2em;"><%= f.add_associated_link "Add measure set", @deal.measure_sets.build %></p>
-        <fieldset class="submit-area">
-          <%= f.submit 'Save' %>
-        </fieldset>
+      
+      <% unless @deal.measure_sets.blank? %>
+        <%= render @deal.measure_sets %>
+      <% else %>
+        There are no measures yet.
       <% end %>
-
-      <h2><a name="comments" style="text-decoration:none; color:#000;">Comments</a></h2>
     
+      <% if @deal.editable_by?(current_user) %>
+        <div id="new_measure_set_form" style="display: none;">
+          <%= render 'measure_set', :measure_set => @deal.measure_sets.build %>
+        </div>
+        
+        <div id="new_measure_set">
+          <p style="margin-bottom:2em;"><%= link_to_function "Add measure set", "$('new_measure_set').hide();$('new_measure_set_form').show();" %></p>
+        </div>
+      <% end %>
+      
+      <h2><a name="comments" style="text-decoration:none; color:#000;">Comments</a></h2>
+      
       <% unless @deal.comments.blank? %>
         <% @deal.comments.each do |comment| %>
           <div class="comment-item <%= cycle 'first', 'second' %>">
             <% if comment.user %>
             <div style="overflow:hidden;">
-              <p class="email" style="float:left; font-weight:bold; "><%= link_to  %><%= mail_to comment.user.email %>:</p>
+              <p class="email" style="float:left; font-weight:bold; "><%= mail_to comment.user.email %>:</p>
               <% if comment.editable_by?(current_user) %>
               <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", [@deal, comment], :method => 'delete', :confirm => 'Are you sure want to delete this comment?' %></p>
               <% end %>
@@ -46,6 +52,8 @@
             <p class="date"><%= comment.created_at %></p>
           </div>
         <% end %>
+      <% else %>
+        <p>No one has commented yet.</p>
       <% end %>
 
       <% if current_user %>

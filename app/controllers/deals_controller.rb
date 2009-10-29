@@ -44,7 +44,8 @@ class DealsController < ApplicationController
   
   def update
     if @deal.update_attributes(params[:deal])
-      redirect_to deals_path
+      flash[:notice] = "Successfully updated a deal"
+      redirect_to @deal
     else
       render 'edit'
     end
