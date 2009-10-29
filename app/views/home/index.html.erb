@@ -2,63 +2,36 @@
 <%= render 'home/tabs', :locals => { :current_tab => 'all' } %>
               <div class="home">
                   <table class="board" border="0" cellpadding="0" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th class="deal">Deal</th>
-                          <th class="comments">Comments</th>
-                          <th class="date">Updated</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="first">
-                          <td>
-                            <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
-                          <td>
-                            <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>
-                          </td>
-                          <td>Tue, 27 Oct at 7:20pm</td>
-                        </tr>
-                        <tr class="second">
-                          <td>
-                            <h3><a href="#">Nam condimentum eros sed augue elementum lacinia</a></h3>
-                          <td>
-                              <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>          
-                          </td>
-                          <td>Tue, 27 Oct at 5:00pm</td>
-                        </tr>
-                        <tr class="first">
-                          <td>
-                            <h3><a href="#">Vestibulum non velit in nunc placerat rutrum</a></h3>
-                          <td>
-                              <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>
-                          </td>
-                          <td>Tue, 27 Oct at 4:40pm</td>
-                        </tr>
-                        <tr class="second">
-                          <td>
-                            <h3><a href="#">Nam tincidunt condimentum ante et adipiscing</a></h3>
-                          <td>
-                              <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>  
-                          </td>
-                          <td>Tue, 27 Oct at 3:45pm</td>
-                        </tr>
-                        <tr class="first">
-                          <td>
-                            <h3><a href="#">Class aptent taciti sociosqu ad litora torquent per conubia nostra</a></h3>
-                          <td>
-                              <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>
-                          </td>
-                          <td>Tue, 27 Oct at 13:00pm</td>
-                        </tr>
-                        <tr class="second">
-                          <td>
-                            <h3><a href="#">Sed posuere mauris eget mauris pharetra sodales</a></h3>
-                          <td>
-                              <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>
-                          </td>
-                          <td>Tue, 27 Oct at 9:30am</td>
-                        </tr>
-                      </tbody>
-                  </table>
+          <thead>
+              <tr>
+                <th class="deal">Deal</th>
+                <th class="comments">Comments</th>
+                <th class="date">Updated</th>
+                <% if current_user %>
+                    <th class="edit"></th>
+                <% end %>
+              </tr>
+          </thead>
+          <tbody>
+              <%
+                i = 0
+                @deals.each do |deal|
+              %>
+                <tr class="<%= (i += 1).even? ? 'first' : 'second' %>">
+                    <td>
+                        <h3><%= link_to deal.title, deal_path(deal) %></h3>
+                    </td>
+                    <td>
+                        <p><%= link_to pluralize(deal.comments.length, 'comment'), deal_path(deal) + '#comments' %></p>
+                    </td>
+                    <td><%= time_ago_in_words deal.updated_at %> ago</td>
+                    <% if current_user %>
+                        <td><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></td>
+                    <% end %>
+                </tr>
+              <% end %>
+          </tbody>
+      </table>
+      <%= will_paginate @deals %>
               </div>
           </div>
