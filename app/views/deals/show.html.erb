@@ -56,6 +56,7 @@
       <% if current_user %>
         <% form_for [@deal, Comment.new] do |f| %>
         <fieldset>
+          <%= f.label :comment, "Post your comment:" %>
           <%= f.text_area :content %>
         </fieldset>
         <fieldset class="submit-area">
