@@ -18,10 +18,9 @@ class Clearance::SessionsController < ApplicationController
       #if @user.email_confirmed?
         sign_in(@user)
         flash_success_after_create
-        session[:deals].each do |deal_id| 
-          deal = Deal.find(deal_id)
-          deal.update_attribute(:user_id, @user.id)
-        end
+        
+        Deal.update_all(['user_id = ?', @user.id], ['id in (?)', session[:deals]]) if session[:deals]
+        
         session[:deals] = nil
         redirect_back_or(url_after_create)
       #else

@@ -22,9 +22,9 @@
               <p><%= f.submit %></p>
             <% end %>
 
-            <% untill @deal.comments.empty? %>
+            <% if @deal.comments %>
             
-            <h2>Comments</h2>
+              <h2>Comments</h2>
 
                 <%
                 i = 0
