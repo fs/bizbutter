@@ -1,9 +1,18 @@
 class DealsController < ApplicationController
-  before_filter :require_user, :only => [:new, :create, :edit, :update]
+  before_filter :require_user, :only => [:edit, :update]
   before_filter :get_deal, :except => [:index, :new, :create]
   
   def index
-    @deals = Deal.all :order => 'published DESC, updated_at DESC'
+    
+    @deals = Deal.all(
+      :conditions => [
+        'user_id = ? OR id IN (?)', current_user ? current_user.id : nil, session[:deals]
+      ],
+      :order => 'published DESC, updated_at DESC'
+    ).paginate(
+      :page => params[:page],
+      :per_page => Deal::DEALS_PER_PAGE
+    )
   end
   
   def show
@@ -15,9 +24,12 @@ class DealsController < ApplicationController
   end
   
   def create
-    @deal = current_user.deals.build(params[:deal])
+    @deal = Deal.new(params[:deal])
+    @deal.user_id = current_user.id if current_user
     
     if @deal.save
+      session[:deals] = [] if !session[:deals]
+      session[:deals].push @deal.id  if !current_user
       redirect_to deals_path
     else
       render 'new'

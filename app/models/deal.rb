@@ -1,4 +1,7 @@
 class Deal < ActiveRecord::Base
+  
+  DEALS_PER_PAGE = 20
+  
   validates_presence_of :title
   #validates_presence_of :user_id
 
