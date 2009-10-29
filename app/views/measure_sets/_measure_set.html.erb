@@ -2,13 +2,12 @@
 <div class="measure-item">
   <p>
     <strong><%= measure_set.title %></strong> 
-    <% if @deal.user == current_user %>
+    <% if @deal.editable_by?(current_user) %>
       <%= link_to "Edit", edit_deal_measure_set_path(@deal, measure_set) %>
     <% end %>
   </p>
   <ul>
-  <%= render measure_set.measures %>
+    <%= render measure_set.measures %>
   </ul>
-
 </div>
 <% end %>

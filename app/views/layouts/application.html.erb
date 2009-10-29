@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -21,35 +20,41 @@
 	</ul>
     </div>
     <div id="container">
-	<% if session[:deals] %>  <div class="notice">You have created <%= pluralize session[:deals].length, 'deal' %>. Please log in or sign up to manage them.</div><% end %>
-
-	<%- flash.each do |name, msg| -%>
-	  <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
-	<%- end -%>  
-        <div id="header">
-            <div class="logo">
-                <a href="/">
-                    <img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" />
-		</a>
-            </div>
-        </div>
-	<div id="wrap">
-	    <div class="create-new-deal">
-                <%= link_to 'Create a new deal', new_deal_path %>
+	    <% unless session[:deals].blank? %>
+	    <div class="notice">
+	      You have created <%= pluralize session[:deals].size, 'deal' %>.
+	      Please log in or sign up to manage them.
 	    </div>
-	    <%= yield %>
+	    <% end %>
+
+    	<%- flash.each do |name, msg| -%>
+    	  <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
+    	<%- end -%>  
+    	
+      <div id="header">
+        <div class="logo">
+          <a href="/">
+            <img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" />
+          </a>
         </div>
+      </div>
+      <div id="wrap">
+        <div class="create-new-deal">
+          <%= link_to 'Create a new deal', new_deal_path %>
+        </div>
+        <%= yield %>
+      </div>
     </div>
     <div id="footer">
-        <div class="logo">
-            <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
-            <p class="copy">&copy; 2009</p>
-        </div>
-	<p class="validator">
-	    <a href="http://validator.w3.org/check?uri=referer">
-	        <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
-	    </a>
-	</p>
+      <div class="logo">
+        <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
+        <p class="copy">&copy; 2009</p>
+      </div>
+      <p class="validator">
+        <a href="http://validator.w3.org/check?uri=referer">
+          <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+        </a>
+      </p>
     </div>
   </body>
 </html>

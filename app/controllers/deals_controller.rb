@@ -16,7 +16,6 @@ class DealsController < ApplicationController
   end
   
   def show
-    @comment = @deal.comments.build
   end
   
   def new
@@ -28,8 +27,11 @@ class DealsController < ApplicationController
     @deal.user_id = current_user.id if current_user
     
     if @deal.save
-      session[:deals] = [] if !session[:deals]
-      session[:deals].push @deal.id  if !current_user
+      if !current_user
+        session[:deals] ||= []
+        session[:deals] << @deal.id
+      end
+      flash[:notice] = "Successfully created a deal"
       redirect_to deals_path
     else
       render 'new'
