@@ -18,7 +18,7 @@
               <div id="measure_sets">
                 <%= f.render_associated_form(@deal.measure_sets) %>
               </div>
-              <p><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
+              <p style="margin-bottom:2em;"><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
               <p><%= f.submit %></p>
             <% end %>
 
