@@ -1,10 +1,10 @@
 	    <div id="navigation">
 		<ul>
-		    <li class="current">View All Deals</li>
-                <% if current_user %>
-                    <li><a href="/deals">My Deals</a></li>
-                <% else %>
-                    <li><a href="/session/new">Join Us</a></li>
+		    <li <%= 'class="current"' if locals[:current_tab] == 'all' %>><a href="/">View All Deals</a></li>
+                
+                    <li <%= 'class="current"' if locals[:current_tab] == 'my' %>><a href="/deals">My Deals</a></li>
+                <% if !current_user %>
+                    <li <%= 'class="current"' if locals[:current_tab] == 'join' %>><a href="/session/new">Join Us</a></li>
                 <% end %>
 		</ul>
 	    </div>

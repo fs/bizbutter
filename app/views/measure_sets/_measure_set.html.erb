@@ -1,12 +1,11 @@
 <% unless measure_set.new_record? %>
-<div>
-  <h3>
-    <%= measure_set.title %>
+<div class="measure-item">
+  <p>
+    <strong><%= measure_set.title %></strong> 
     <% if @deal.user == current_user %>
-      <%= link_to "edit", edit_deal_measure_set_path(@deal, measure_set) %>
+      <%= link_to "Edit", edit_deal_measure_set_path(@deal, measure_set) %>
     <% end %>
-  </h3>
-
+  </p>
   <ul>
   <%= render measure_set.measures %>
   </ul>

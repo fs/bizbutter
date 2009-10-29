@@ -17,6 +17,11 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem "thoughtbot-clearance", :lib => 'clearance', :source  => 'http://gems.github.com', :version => '0.8.2'
 
+  config.gem 'mislav-will_paginate',
+    :lib     => 'will_paginate',
+    :source  => 'http://gems.github.com',
+    :version => '~> 2.3.11'
+
   DO_NOT_REPLY = "donotreply@example.com"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
