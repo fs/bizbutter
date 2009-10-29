@@ -1,6 +1,7 @@
 <%= render 'home/tabs', :locals => { :current_tab => 'my' } %>
     <div class="show-deal">
         <div class="form deal">
+
             <h1><%= @deal.title %></h1>
             
             <p style="background:#888; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; "><em><%= @deal.content %></em></p>
@@ -11,36 +12,14 @@
             
             <%= link_to 'Edit', edit_deal_path(@deal) if current_user && current_user.id == @deal.user_id %>
             
-          <h2>Measures</h2>
+            <h2>Measures</h2>
             
-            <div class="measure-sets">
-              <%= render @deal.measure_sets %>
-            </div>
-
-            <% if @deal.user == current_user %>
-                <h3>Add new measure set</h3>
-                <div class="form measure-set">
-                <% form_for [@deal, @measure_set] do |f| %>
-                    <fieldset>
-                        <%= f.label :title, "measure_set title: " %>
-                        <%= f.text_field :title %>
-                        
-                        <%= f.check_box(:published) %>
-                        <%= f.label :published, "published" %>
-        
-                        <% f.fields_for :measures do |mf| %>
-                          <br />
-                          <%= mf.text_field :title %>
-                          <%= mf.text_field :value %>
-                          <%= mf.check_box :published %>
-                          <%= mf.label :published, "published" %>
-                        <% end %>
-                    </fieldset>
-                    <fieldset class="submit-area">
-                       <%= submit_tag %>
-                    </fieldset>
-                <% end %>
-                </div>
+            <% form_for @deal do |f| %>
+              <div id="measure_sets">
+                <%= f.render_associated_form(@deal.measure_sets) %>
+              </div>
+              <%= f.add_associated_link "Add New Set", @deal.measure_sets.build %>
+              <p><%= f.submit %></p>
             <% end %>
 
             <% unless @deal.comments.empty? %>

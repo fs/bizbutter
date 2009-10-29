@@ -1,0 +1,11 @@
+<div class="measure_set">
+  <%= f.text_field :title %>
+  <%= f.check_box :published %>
+  <%= f.label :published, "published set", :style => "display:inline" %>
+  | <%= f.remove_link "remove set" %>
+
+  <div id="<%= dom_id(measure_set) %>">
+    <%= f.render_associated_form(measure_set.measures) %>
+  </div>
+  <%= f.add_associated_link "Add New Measure", measure_set.measures.build, :container => dom_id(measure_set) %>
+</div>
