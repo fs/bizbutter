@@ -16,7 +16,7 @@
       <% unless @deal.measure_sets.blank? %>
         <%= render @deal.measure_sets %>
       <% else %>
-        There are no measures yet.
+        <p>There are no measures yet.</p>
       <% end %>
     
       <% if @deal.editable_by?(current_user) %>
