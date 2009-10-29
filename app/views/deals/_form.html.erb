@@ -19,8 +19,6 @@
   
   <fieldset class="submit-area">
     <%= f.submit :save %>
-    <% unless @deal.new_record? %>
-    or <%= link_to 'Cancel', deals_path %>
-    <% end %>
+    or <%= link_to 'Cancel', root_path %>
   </fieldset>
 <% end %>
