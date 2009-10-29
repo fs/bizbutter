@@ -1,17 +1,20 @@
 <% div_for measure_set do %>
-  <p>
-    <strong><%= measure_set.title %></strong>
-    <% if @deal.editable_by?(current_user) %>
-      <%= link_to_function "Edit", "$('#{dom_id(measure_set)}').hide();$('#{dom_id(measure_set)}_form').show();" %>
-    <% end %>
+  <div class="measure-list">
+    <h3><%= measure_set.title %></h3>
+    <ul>
+      <% for measure in measure_set.measures %>
+      <li>
+        <strong><%= measure.title %></strong>: <%= measure.value %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <p class="edit">
+      <% if @deal.editable_by?(current_user) %>
+        <%= link_to_function "Edit", "$('#{dom_id(measure_set)}').hide();$('#{dom_id(measure_set)}_form').show();" %>
+      <% end %>
   </p>
-  <ul>
-    <% for measure in measure_set.measures %>
-    <li>
-      <strong><%= measure.title %></strong>: <%= measure.value %>
-    </li>
-    <% end %>
-  </ul>
+
 <% end %>
 
 <div id="<%= dom_id(measure_set) %>_form" style="display: none;">

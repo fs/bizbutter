@@ -4,13 +4,14 @@
       
       <h1><%= @deal.title %></h1>
       
-      <p style="background:#888; padding:1em 1.5em; line-height:1.5em; font-size:1.1em;">
+      <p class="deal-content">
         <em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em>
       </p>
       
-      <p style="color:#333; font-weight:bold; "><%= @deal.published ? 'Published' : 'Not published' %></p>
-      <p style="color:#333;">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
+      <p class="published"><%= @deal.published ? 'Published' : 'Not published' %></p>
+      <p class="date">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
       <%= link_to 'Edit', edit_deal_path(@deal) if @deal.editable_by?(current_user) %>
+      
       <h2>Measures</h2>
       
       <% unless @deal.measure_sets.blank? %>

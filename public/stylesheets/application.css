@@ -246,7 +246,10 @@ div.create-new-deal { position:absolute; right:2.5em; top:10.5em; }
 	}
 	div.create-new-deal a:hover { background:#e99; border:3px solid #fee; -moz-border-radius:5px; -webkit-border-radius:5px; }
 
-#content div.show-deal { width:73em; }	
+#content div.show-deal { width:73em; }
+    #content div.show-deal p.deal-content { background:#888; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; }
+    #content div.show-deal p.published { color:#333; font-weight:bold; }
+    #content div.show-deal p.date { color:#333; }
     #content div.show-deal div.form.deal div { width:auto; }
     #content div.show-deal div.form.deal h1 { font-family:Trebuchet MS; margin-bottom:0.5em; font-size:2.5em; }
     #content div.show-deal div.form.deal h2 { margin:1.5em -1em 1em; background:#b88; padding:0 1em; }
@@ -268,6 +271,12 @@ div.create-new-deal { position:absolute; right:2.5em; top:10.5em; }
 	    #content div.form.deal .measure-set div.measures label { width:29em; display:block; float:left; }
 	    #content div.form.deal .measure-set div.measures input { width:24em; }
     #content div.show-deal div.form.deal .measure-set fieldset.submit-area { background:none; border:0; padding:0; margin:2em 0 1em; }
+    
+#content div.form.deal .measure-list { margin-bottom:1em; padding:1em; background:#aaa; }
+    #content div.show-deal div.form.deal .measure-list h3 { margin:0; font-size:1.4em; }
+    #content div.form.deal .measure-list ul { margin:0em; }
+        #content div.form.deal .measure-list ul li { list-style: disc inside; margin:0.7em 0; }
+    #content div.form.deal p.edit { margin-bottom:2em; }
     
 #content div.form.deal .measure-item ul { margin-bottom:1em; }
     #content div.form.deal .measure-item ul li { list-style: disc inside; padding-bottom:0.2em; }
