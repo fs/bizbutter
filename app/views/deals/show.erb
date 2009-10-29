@@ -1,0 +1,62 @@
+<%= render 'home/tabs', :locals => { :current_tab => 'all' } %>
+    <div class="show-deal">
+        <div class="form deal">
+
+            <h1><%= @deal.title %></h1>
+            <p style="background:#888; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; "><em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em></p>
+            
+            <p style="color:#333; font-weight:bold; "><%= @deal.published ? 'Published' : 'Not published' %></p>
+            
+            <p style="color:#333;">Updated <%= time_ago_in_words @deal.updated_at %> ago</p>
+            
+            <%= link_to 'Edit', edit_deal_path(@deal) if current_user && current_user.id == @deal.user_id %>
+            
+            <h2>Measures</h2>
+            
+            <% form_for @deal do |f| %>
+              <div id="measure_sets">
+                <%= f.render_associated_form(@deal.measure_sets) %>
+              </div>
+              <p style="margin-bottom:2em;"><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
+              <fieldset class="submit-area">
+                  <%= f.submit %>
+              </fieldset>
+            <% end %>
+
+            <% if @deal.comments %>
+              <h2><a name="comments" style="text-decoration:none; color:#000;">Comments</a></h2>
+              <% i = 0; @deal.comments.each do |comment| %>
+                <% if comment.id %>
+                    <div class="comment-item <%= (i += 1).odd? ? 'first' : 'second' %>">
+                      <% if comment.user %>
+                        <div style="overflow:hidden; ">
+                            <p class="email" style="float:left; font-weight:bold; "><a href="mailto:<%= comment.user.email %>"><%= comment.user.email %></a>:</p>
+                            <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete', :confirm => 'Are you sure want to delete this comment?' if current_user && comment.user.id == current_user.id %></p>
+                        </div>
+                            <% end %>
+                        <div class="comment-content">
+                            <p>
+                                <%= comment.content %>
+                            </p>
+                        </div>
+                        <p class="date"><%= comment.created_at %></p>
+                    </div>
+                  <% end %>
+              <% end %>
+            <% end %>
+            
+            <% if current_user %>
+            
+              <% form_for [@deal, @comment]  do |f| %>
+              <fieldset>
+                  <%= f.text_area :content %>
+              </fieldset>
+              <fieldset class="submit-area">
+                  <%= f.submit 'Post comment' %>
+              </fieldset>
+              <% end %>
+            
+            <% end %>
+        </div>
+    </div>
+</div>
