@@ -1,17 +1,11 @@
-<div id="navigation">
-		<ul>
-		    <li><a href="#">All Deals</a></li>
-		    <li><a href="#">Latest Deals</a></li>
-		    <li><a href="#">Most Commented</a></li>
-		    <li class="current">Dashboard</li>
-		</ul>
-</div>
-<div id="content" class="dashboard">
-    <div class="form short new-deal">
-        <% form_for @deal do |f| %>
-          
-          <%= render :partial => 'form', :locals => { :f => f } %>
-          
-        <% end %>
+<%= render 'home/tabs' %>
+    <div class="home">
+        <div class="form short deal">
+            <% form_for @deal do |f| %>
+              
+              <%= render :partial => 'form', :locals => { :f => f } %>
+              
+            <% end %>
+        </div>
     </div>
 </div>
