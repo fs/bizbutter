@@ -1,4 +1,9 @@
-<%= render 'home/tabs' %>
+<div class="create-new-deal">
+                  <% if current_user %>
+                    <%= link_to 'Create a new deal', new_deal_path %>
+                  <% end %>
+</div>
+<%= render 'home/tabs', :locals => { :current_tab => 'my' } %>
   <div class="home">
       <div class="form">
       <table class="board" border="0" cellpadding="0" cellspacing="0">
@@ -6,13 +11,16 @@
               <tr>
                 <th class="deal">Deal</th>
                 <th class="comments">Comments</th>
-                <th class="date">Update</th>
+                <th class="date">Updated</th>
                 <th></th>
               </tr>
           </thead>
           <tbody>
-              <% @deals.each do |deal| %>
-                <tr class="first">
+              <%
+                i = 0
+                @deals.each do |deal|
+              %>
+                <tr class="<%= (i += 1).even? ? 'first' : 'second' %>">
                     <td>
                         <h3><%= link_to deal.title, deal_path(deal) %></h3>
                     </td>
@@ -25,13 +33,6 @@
               <% end %>
           </tbody>
       </table>
-      
-                  <div>
-                  <br />
-                  <% if current_user %>
-                    <%= link_to 'Create a new deal', new_deal_path %>
-                  <% end %>
-                  
-                  </div>
       </div>
   </div>
+</div>
