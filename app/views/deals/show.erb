@@ -49,7 +49,7 @@
                 <%= comment.created_at %><br />
                 <% if comment.user %>
                   <%= comment.user.email %><br />
-                  <%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete' if comment.user.id == current_user.id %>
+                  <%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete', :confirm => 'Are you sure want to delete this comment?' if comment.user.id == current_user.id %>
                 <% end %>
               </div>
               

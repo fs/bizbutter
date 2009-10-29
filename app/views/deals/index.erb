@@ -1,6 +1,8 @@
 <%= render 'home/tabs' %>
+  
   <div class="home">
       <div class="form">
+      
       <table class="board" border="0" cellpadding="0" cellspacing="0">
           <thead>
               <tr>
@@ -25,7 +27,7 @@
               <% end %>
           </tbody>
       </table>
-      
+      <%= will_paginate @deals %>
                   <div>
                   <br />
                     <%= link_to 'Create a new deal', new_deal_path %>
