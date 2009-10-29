@@ -46,26 +46,27 @@
             <% unless @deal.comments.empty? %>
             
             <h2>Comments</h2>
-            <%
-            i = 0
-            @deal.comments.each do |comment|
-            %>
-                <div class="comment-item <%= (i += 1).odd? ? 'first' : 'second' %>">
-                        <% if comment.user %>
-                    <div style="overflow:hidden; ">
-                        <p class="email" style="float:left; font-weight:bold; "><a href="mailto:<%= comment.user.email %>"><%= comment.user.email %></a>:</p>
-                        <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete' if comment.user.id == current_user.id %></p>
+
+                <%
+                i = 0
+                @deal.comments.each do |comment|
+                %>
+                    <div class="comment-item <%= (i += 1).odd? ? 'first' : 'second' %>">
+                            <% if comment.user %>
+                        <div style="overflow:hidden; ">
+                            <p class="email" style="float:left; font-weight:bold; "><a href="mailto:<%= comment.user.email %>"><%= comment.user.email %></a>:</p>
+                            <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete', :confirm => 'Are you sure want to delete this comment?' if comment.user.id == current_user.id %></p>
+                        </div>
+                            <% end %>
+                        <div class="comment-content">
+                            <p>
+                                <%= comment.content %>
+                            </p>
+                        </div>
+                        <p class="date"><%= comment.created_at %></p>
                     </div>
-                        <% end %>
-                    <div class="comment-content">
-                        <p>
-                            <%= comment.content %>
-                        </p>
-                    </div>
-                    <p class="date"><%= comment.created_at %></p>
-                </div>
-            <% end %>
-            
+                <% end %>
+           
             <% end %>
             
             <% if current_user %>
