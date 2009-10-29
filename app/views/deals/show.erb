@@ -27,10 +27,10 @@
               <% i = 0; @deal.comments.each do |comment| %>
                 <% if comment.id %>
                     <div class="comment-item <%= (i += 1).odd? ? 'first' : 'second' %>">
-                            <% if comment.user %>
+                      <% if comment.user %>
                         <div style="overflow:hidden; ">
                             <p class="email" style="float:left; font-weight:bold; "><a href="mailto:<%= comment.user.email %>"><%= comment.user.email %></a>:</p>
-                            <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete', :confirm => 'Are you sure want to delete this comment?' if comment.user.id == current_user.id %></p>
+                            <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", deal_comment_path(@deal, comment), :method => 'delete', :confirm => 'Are you sure want to delete this comment?' if current_user && comment.user.id == current_user.id %></p>
                         </div>
                             <% end %>
                         <div class="comment-content">
