@@ -3,14 +3,9 @@ class DealsController < ApplicationController
   before_filter :get_deal, :except => [:index, :new, :create]
   
   def index
-    
-    @deals = Deal.all(
-      :conditions => [
-        'user_id = ? OR id IN (?)', current_user ? current_user.id : nil, session[:deals]
-      ],
-      :order => 'published DESC, updated_at DESC'
-    ).paginate(
-      :page => params[:page],
+    @deals = Deal.paginate(
+      :order    => 'published DESC, updated_at DESC',
+      :page     => params[:page],
       :per_page => Deal::DEALS_PER_PAGE
     )
   end
