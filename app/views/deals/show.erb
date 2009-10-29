@@ -18,11 +18,11 @@
               <div id="measure_sets">
                 <%= f.render_associated_form(@deal.measure_sets) %>
               </div>
-              <%= f.add_associated_link "Add New Set", @deal.measure_sets.build %>
+              <p><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
               <p><%= f.submit %></p>
             <% end %>
 
-            <% unless @deal.comments.empty? %>
+            <% untill @deal.comments.empty? %>
             
             <h2>Comments</h2>
 
