@@ -9,4 +9,9 @@ class Deal < ActiveRecord::Base
 
   has_many :measure_sets, :attributes => true
   has_many :comments
+  
+  def editable_by? (user)
+    user && user.id == self.user.id
+  end
+  
 end
