@@ -4,6 +4,6 @@ class Deal < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :measure_sets
+  has_many :measure_sets, :attributes => true
   has_many :comments
 end

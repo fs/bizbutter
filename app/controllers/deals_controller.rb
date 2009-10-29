@@ -8,8 +8,6 @@ class DealsController < ApplicationController
   
   def show
     @comment = @deal.comments.build
-    @measure_set = @deal.measure_sets.build
-    3.times { @measure_set.measures.build }
   end
   
   def new
