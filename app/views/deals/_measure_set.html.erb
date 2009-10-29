@@ -1,18 +1,26 @@
-<div class="measure-set"  style="background:#888; margin-bottom:1em; padding:1em; ">
-  <div class="measure-title">
-    <div class="measure-title-field">
-      <%= f.label :title, "Title: " %>
-      <%= f.text_field :title %>
-    </div>
-    <div class="remove-measure" >
-      <%= f.remove_link "remove set" %>
+<% form_for [@deal, measure_set], :html => { :id => "#{dom_id(measure_set)}_form" } do |f| %>
+  <div class="measure-set">
+    <div class="measure-title">
+      <div class="measure-title-field">
+        <%= f.text_field :title %>
       </div>
-  </div>
-  <div id="<%= dom_id(measure_set) %>" class="measures">
-    <%= f.label :measures, "Measures: " %>
-    <%= f.label :values, "Values: " %>
-    <%= f.render_associated_form(measure_set.measures) %>
-    <p><%= f.add_associated_link "Add New Measure", measure_set.measures.build, :container => dom_id(measure_set) %></p>
-  </div>
-  
-</div>
+      <div class="remove-measure" >
+        <% unless measure_set.new_record? %>
+          <%= link_to "remove", [@deal, measure_set], :method => :delete, :confirm => 'Are you sure?' %>
+        <% end %>
+      </div>
+    </div>  
+    <div id="<%= dom_id(measure_set) %>_measures" class="measures">
+      <%= f.label :measures, "Measures: " %>
+      <%= f.label :values, "Values: " %>
+      <%= f.render_associated_form(measure_set.measures) %>
+    </div>
+      
+    <p><%= f.add_associated_link "Add New Measure", measure_set.measures.build, :container => "#{dom_id(measure_set)}_measures" %></p>
+  </div>      
+  <fieldset class="submit-area">
+    <%= f.submit 'Save' %> or
+    <%= link_to_function "Cancel", "$('#{dom_id(measure_set)}').show();$('#{dom_id(measure_set)}_form').hide();" %>
+  </fieldset>
+<% end %>
+

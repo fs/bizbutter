@@ -1,14 +1,19 @@
-<% unless measure_set.new_record? %>
-<div class="measure-item">
+<% div_for measure_set do %>
   <p>
-    <strong><%= measure_set.title %></strong> 
-    <% if @deal.user == current_user %>
-      <%= link_to "Edit", edit_deal_measure_set_path(@deal, measure_set) %>
+    <strong><%= measure_set.title %></strong>
+    <% if @deal.editable_by?(current_user) %>
+      <%= link_to_function "Edit", "$('#{dom_id(measure_set)}').hide();$('#{dom_id(measure_set)}_form').show();" %>
     <% end %>
   </p>
   <ul>
-  <%= render measure_set.measures %>
+    <% for measure in measure_set.measures %>
+    <li>
+      <strong><%= measure.title %></strong>: <%= measure.value %>
+    </li>
+    <% end %>
   </ul>
-
-</div>
 <% end %>
+
+<div id="<%= dom_id(measure_set) %>_form" style="display: none;">
+  <%= render 'deals/measure_set', :measure_set => measure_set %>
+</div>
