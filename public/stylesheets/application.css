@@ -31,7 +31,7 @@ a:hover { text-decoration:none; }
 #top-menu {
       overflow:hidden;
       }
-      #top-menu ul { float:right; padding:1em 2em 0 0; }
+      #top-menu ul { float:right; padding:1em 0 0; }
       #top-menu ul li { list-style:none; float:left; margin-left:1em; font-weight:bold; }
       #top-menu ul li a {
 	border-left:2px solid #000;
@@ -208,13 +208,10 @@ a:hover { text-decoration:none; }
     color:#000;
     border-top:2px solid #999;
     margin:2em 0 0;
+    padding-bottom:1em;
     }
     #footer .logo { float:right; width:21em; padding:0.5em 0; }
 	#footer .logo img { height:2.6em; padding:0; }
-	#footer p.copy {
-        padding:0.2em 0.5em;
-        font-size:0.8em;
-        }
     #footer .validator { padding:1.5em 0 0 1em; float:left; width:20em; }
     
 #content div.form .errorExplanation { margin-bottom:1em; }
@@ -231,7 +228,7 @@ a:hover { text-decoration:none; }
 
 div.notice { background:#696; float:left; position:absolute; top:0; left:0; padding:1em; color:#fff; font-weight:bold; }
 
-div.create-new-deal { position:absolute; right:2.5em; top:10.5em; }
+div.create-new-deal { position:absolute; right:0; top:13em; }
     div.create-new-deal a {
 	cursor:pointer;
 	color:#fff;
