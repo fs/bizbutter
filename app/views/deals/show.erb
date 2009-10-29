@@ -23,13 +23,9 @@
             <% end %>
 
             <% if @deal.comments %>
-            
               <h2>Comments</h2>
-
-                <%
-                i = 0
-                @deal.comments.each do |comment|
-                %>
+              <% i = 0; @deal.comments.each do |comment| %>
+                <% if comment.id %>
                     <div class="comment-item <%= (i += 1).odd? ? 'first' : 'second' %>">
                             <% if comment.user %>
                         <div style="overflow:hidden; ">
@@ -44,8 +40,8 @@
                         </div>
                         <p class="date"><%= comment.created_at %></p>
                     </div>
-                <% end %>
-           
+                  <% end %>
+              <% end %>
             <% end %>
             
             <% if current_user %>
