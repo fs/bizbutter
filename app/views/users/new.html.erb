@@ -4,7 +4,9 @@
             <h2>Want to Become a Member? Join us now!</h2>
             <% form_for @user do |form| %>
               <%= render :partial => '/users/form', :object => form %>
+                  <fieldset class="submit-area">
               <%= form.submit 'Sign up', :disable_with => 'Please wait...', :class => 'submit' %>
+                  </fieldset>
             <% end %>
         </div>
     </div>
