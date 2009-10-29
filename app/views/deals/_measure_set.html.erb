@@ -1,4 +1,4 @@
-<div class="measure_set">
+<div class="measure_set"  style="background:#888; padding:1em; margin-bottom:1em; ">
   <%= f.text_field :title %>
   <%= f.check_box :published %>
   <%= f.label :published, "published set", :style => "display:inline" %>
@@ -7,5 +7,5 @@
   <div id="<%= dom_id(measure_set) %>">
     <%= f.render_associated_form(measure_set.measures) %>
   </div>
-  <%= f.add_associated_link "Add New Measure", measure_set.measures.build, :container => dom_id(measure_set) %>
+  <p><%= f.add_associated_link "Add New Measure", measure_set.measures.build, :container => dom_id(measure_set) %></p>
 </div>

@@ -217,8 +217,10 @@ a:hover { text-decoration:none; }
 #content div.form .errorExplanation { margin-bottom:1em; }
 #content div.form.new-deal .errorExplanation { margin-bottom:3em; }
 #content div.form .errorExplanation h2 { display:none; }
-#content div.form .errorExplanation p { font-size:1em; margin-bottom:0.5em; }
-#content div.form .errorExplanation ul li { list-style:disc inside; }
+#content div.form .errorExplanation p { display:block; color:#c00; font-weight:bold; font-size:1em; margin-bottom:0.5em; }
+#content div.form .errorExplanation ul li { display:none; list-style:disc inside; }
+
+    #content div.join div.form .errorExplanation p { display:block; color:#c00; font-weight:bold; }
 
 #content div.form .fieldWithErrors { display:inline; }
 #content div.form .fieldWithErrors label { font-weight:bold; color:#c00; }

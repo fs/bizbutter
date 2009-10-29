@@ -18,12 +18,12 @@
               <div id="measure_sets">
                 <%= f.render_associated_form(@deal.measure_sets) %>
               </div>
-              <p><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
+              <p style="margin-bottom:2em;"><%= f.add_associated_link "Add New Set", @deal.measure_sets.build %></p>
               <p><%= f.submit %></p>
             <% end %>
 
             <% if @deal.comments %>
-              <h2>Comments</h2>
+              <h2><a name="comments" style="text-decoration:none; color:#000;">Comments</a></h2>
               <% i = 0; @deal.comments.each do |comment| %>
                 <% if comment.id %>
                     <div class="comment-item <%= (i += 1).odd? ? 'first' : 'second' %>">

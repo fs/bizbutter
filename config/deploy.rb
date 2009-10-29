@@ -1,4 +1,4 @@
-set :application, "handy-works"
+set :application, "bizbutter"
 set :repository, "git@github.com:fs/#{application}"
 set :scm, :git
 set :branch, "master"
@@ -6,7 +6,7 @@ set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/rails/#{application}"
 set :use_sudo, false
 
-server "handyworks.flatsourcing.com", :app, :web, :db, :primary => true
+server "#{application}.flatsourcing.com", :app, :web, :db, :primary => true
 
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"

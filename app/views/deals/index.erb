@@ -24,7 +24,9 @@
                         <h3><%= link_to deal.title, deal_path(deal) %></h3>
                     </td>
                     <td>
-                        <p><a href="#">5</a>, last by: <a href="#">Anton</a></p>
+                    <% if deal.comments.length > 0 %>
+                        <p><%= link_to pluralize(deal.comments.length, 'comment'), deal_path(deal) + '#comments' %></p>
+                    <% end %>
                     </td>
                     <td><%= time_ago_in_words deal.updated_at %> ago</td>
                     <td><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></td>
