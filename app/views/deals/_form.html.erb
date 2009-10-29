@@ -1,0 +1,26 @@
+<% form_for @deal do |f| %>
+  <fieldset>
+    <div>
+      <%= f.error_messages %>
+    </div>
+
+    <div>
+      <%= f.label :title, "Title<span class='required'>*</span>" %>
+      <%= f.text_field :title, :class => 'new-deal-title' %>
+    </div>
+  
+    <div>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </div>
+  
+    <div class="check">
+      <%= f.check_box :published %>
+      <%= f.label :published %>
+    </div>
+  </fieldset>
+  <p><span class="required">*</span> - required fields</p>
+  <fieldset class="submit-area">
+    <%= f.submit :save %>
+  </fieldset>
+<% end %>
