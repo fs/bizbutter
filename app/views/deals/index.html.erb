@@ -12,11 +12,8 @@
               </tr>
           </thead>
           <tbody>
-              <%
-                i = 0
-                @deals.each do |deal|
-              %>
-                <tr class="<%= (i += 1).even? ? 'first' : 'second' %>">
+              <% @deals.each do |deal| %>
+                <tr class="<%= cycle('first', 'second') -%>">
                     <td>
                         <h3><%= link_to deal.title, deal_path(deal) %></h3>
                     </td>

@@ -12,7 +12,7 @@
         <em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em>
       </p>
       
-      <p class="published"><%= @deal.published ? 'Published' : 'Not published' %></p>
+      <%= content_tag :p, 'Draft', :class => 'published' unless @deal.published? %>
       <p class="date">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
       
       <h2>Measures</h2>
