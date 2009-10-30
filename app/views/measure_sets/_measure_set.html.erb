@@ -8,11 +8,13 @@
       <% end %>
       </div>
     </div>
+    <% unless measure_set.measures.blank? %>
     <ul>
       <% for measure in measure_set.measures %>
       <li><p><strong><%= measure.title %></strong>: <%= measure.value %></p></li>
       <% end %>
     </ul>
+    <% end %>
   </div>
 <% end %>
 
