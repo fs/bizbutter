@@ -1,7 +1,7 @@
 <%= render 'home/tabs', :locals => { :current_tab => 'join' } %>
     <div class="join">
         <div class="form">
-            <h2>Want to Become a Member? Join us now!</h2>
+            <h2>Join us now!</h2>
             <% form_for @user do |form| %>
               <%= render :partial => '/users/form', :object => form %>
                   <fieldset class="submit-area">
@@ -10,7 +10,7 @@
             <% end %>
         </div>
     </div>
-</div>
+
 <div id="sidebar">
   <h3>That's it!</h3>
   <p>Yep, this is all the info we need to set you up. Once you're done activating your account it's a good idea to go in and edit your profile with some stuff about yourself for other members to get to know you.</p>
@@ -18,4 +18,5 @@
   
   <h3>Already a member?</h3>
   <p><a href="/session/new">Click here to login</a></p>
+</div>
 </div>

@@ -1,8 +1,12 @@
 <%= render 'home/tabs', :locals => { :current_tab => 'all' } %>
   <div class="show-deal">
     <div class="form deal">
-      
-      <h1><%= @deal.title %></h1>
+      <div class="new-deal-title">
+        <h1><%= @deal.title %></h1>
+        <div class="edit">
+          <%= link_to 'Edit', edit_deal_path(@deal) if @deal.editable_by?(current_user) %>
+        </div>
+      </div>
       
       <p class="deal-content">
         <em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em>
@@ -10,7 +14,6 @@
       
       <p class="published"><%= @deal.published ? 'Published' : 'Not published' %></p>
       <p class="date">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
-      <%= link_to 'Edit', edit_deal_path(@deal) if @deal.editable_by?(current_user) %>
       
       <h2>Measures</h2>
       
