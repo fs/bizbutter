@@ -15,9 +15,9 @@
     </div>
 
     <% if current_user %>
-    <div>
+    <div class="check">
       <%= f.check_box :published %>
-      <%= f.label :published, "Published", :style => 'display:inline' %>
+      <%= f.label :published, "Published" %>
     </div>
     <% end %>
   </fieldset>
