@@ -289,7 +289,7 @@ div.create-new-deal { float:right; margin-top:100px; }
     #content div.form.deal .measure-list .measure-list-title { overflow:hidden; }
     #content div.show-deal div.form.deal .measure-list .measure-list-title h3 { float:left; margin:0; font-size:1.2em; margin:0; }
     #content div.show-deal div.form.deal .measure-list .measure-list-title  div.edit { float:right; }
-    #content div.form.deal .measure-list ul { margin:0em; background:#eee; padding:0em 1em; margin-top:0.5em; overflow:hidden; }
+    #content div.form.deal .measure-list ul { margin:0em; background:#ddd; padding:0em 1em; margin-top:0.5em; overflow:hidden; }
         #content div.form.deal .measure-list ul li { list-style: none; }
 	    #content div.form.deal .measure-list ul li p { color:#000; margin-bottom:0; line-height:2em; }
     #content div.form.deal p.edit { margin-bottom:2em; }
