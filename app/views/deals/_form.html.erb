@@ -12,7 +12,14 @@
     <div>
       <%= f.label :content %>
       <%= f.text_area :content %>
-    </div>  
+    </div>
+
+    <% if current_user %>
+    <div>
+      <%= f.check_box :published %>
+      <%= f.label :published, "Published", :style => 'display:inline' %>
+    </div>
+    <% end %>
   </fieldset>
   
   <p><span class="required">*</span> - required fields</p>
