@@ -259,16 +259,16 @@ div.create-new-deal { position:absolute; right:0; top:13em; }
 	#content div.show-deal div.form.deal .new-deal-title div.edit { float:right; color:#ccc; }
 	#content div.show-deal div.form.deal .new-deal-title div.edit a { background:#444; color:#eee; line-height:2.5em; padding:1em; }
 	#content div.show-deal div.form.deal .new-deal-title div.edit a:hover { background:#666; }
-    #content div.show-deal p.deal-content { background:#ccc; color:#000; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; font-weight:bold; }
+    #content div.show-deal p.deal-content { background:#eee; color:#000; padding:1em 1.5em; line-height:1.5em; font-size:1.1em; font-weight:bold; }
     #content div.show-deal p.published { color:#ccc; background:#555; font-weight:bold; padding:0.5em; text-align:center; width:8em; }
-    #content div.show-deal p.date { color:#000; }
+    #content div.show-deal p.date { color:#eee; font-weight:bold; }
     #content div.show-deal div.form.deal div { width:auto; }
     #content div.show-deal div.form.deal h1 { font-family:Trebuchet MS; margin-bottom:0.5em; font-size:2.5em; }
     #content div.show-deal div.form.deal h2 { margin:1.5em -1em 1em; background:#b88; padding:0 1em; font-size:2em; }
     #content div.show-deal div.form.deal h3 { margin:1.5em 0 0.5em; }
     #content div.show-deal div.form.deal .comment-item { padding:1em; width:auto; margin-bottom:1em; color:#000; }	
-	#content div.show-deal div.form.deal .comment-item.first { background:#aaa; }
-	#content div.show-deal div.form.deal .comment-item.second { background:#888; }
+	#content div.show-deal div.form.deal .comment-item.first { background:#eee; }
+	#content div.show-deal div.form.deal .comment-item.second { background:#eee; }
 	#content div.show-deal div.form.deal .comment-item p { color:#000; }
 
 #content div.form.deal .measure-set { border-bottom: 2px solid #999; background:#ccc; padding:1em; margin-bottom:1em; }  
@@ -285,11 +285,11 @@ div.create-new-deal { position:absolute; right:0; top:13em; }
 	    #content div.form.deal .measure-set div.measures input { width:24em; }
     #content div.show-deal div.form.deal .measure-set fieldset.submit-area { background:none; border:0; padding:0; margin:2em 0 1em; }
     
-#content div.form.deal .measure-list { margin-bottom:1em; padding:1em; background:#aaa; }
+#content div.form.deal .measure-list { margin-bottom:1em; padding:1em; background:#ccc; }
     #content div.form.deal .measure-list .measure-list-title { overflow:hidden; }
     #content div.show-deal div.form.deal .measure-list .measure-list-title h3 { float:left; margin:0; font-size:1.2em; margin:0; }
     #content div.show-deal div.form.deal .measure-list .measure-list-title  div.edit { float:right; }
-    #content div.form.deal .measure-list ul { margin:0em; background:#ccc; padding:0em 1em; margin-top:0.5em; overflow:hidden; }
+    #content div.form.deal .measure-list ul { margin:0em; background:#eee; padding:0em 1em; margin-top:0.5em; overflow:hidden; }
         #content div.form.deal .measure-list ul li { list-style: none; }
 	    #content div.form.deal .measure-list ul li p { color:#000; margin-bottom:0; line-height:2em; }
     #content div.form.deal p.edit { margin-bottom:2em; }
