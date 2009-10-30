@@ -220,7 +220,7 @@ a:hover { text-decoration:none; }
     }
     #footer .logo { float:right; width:21em; padding:0.5em 0; }
 	#footer .logo img { height:2.5em; padding:0.5em 0 0; }
-    #footer .validator { padding:1.5em 0 0 1em; float:left; width:20em; }
+    #footer .validator { padding:1.5em 0 0 2.5em; float:left; width:20em; }
     
 #content div.form .errorExplanation { margin-bottom:1em; }
 #content div.form.new-deal .errorExplanation { margin-bottom:3em; }
