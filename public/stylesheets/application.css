@@ -74,7 +74,7 @@ a:hover { text-decoration:none; }
       overflow:hidden;
       }
       #navigation ul {
-	  margin:0.5em 0;
+	  margin:0;
 	  width:48em;
 	  }
 	  #navigation ul li {
@@ -197,7 +197,7 @@ a:hover { text-decoration:none; }
         width:238px;
 	padding:0 1.5em;
 	background:#777;
-	border:1px solid #999;
+	border:1px solid #777;
         }
 	#sidebar p { color:#fff; margin-bottom:2em; line-height:1.5em; font-size:0.95em; }
 	#sidebar h3 {
@@ -238,7 +238,7 @@ a:hover { text-decoration:none; }
 
 div.notice { background:#696; float:left; padding:1em; color:#fff; font-weight:bold; margin:1em 1em 0 0; }
 
-div.create-new-deal { position:absolute; right:0; top:13em; }
+div.create-new-deal { float:right; margin-top:100px; }
     div.create-new-deal a {
 	cursor:pointer;
 	color:#fff;
