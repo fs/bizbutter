@@ -1,0 +1,6 @@
+
+<%= new_user_confirmation_url(
+      :host => APP_CONFIG['host'],
+      :user_id => @user,
+      :token   => @user.confirmation_token,
+      :encode  => false) %>

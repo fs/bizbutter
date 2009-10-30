@@ -2,8 +2,8 @@
   <div class="measure-set">
     <div class="measure-title">
       <div class="measure-title-field">
-        <%= f.label :title, "Title: " %>
-        <%= f.text_field :title %>
+        <%= f.label :title, "Title: ", :for => "#{dom_id(measure_set)}_form_title" %>
+        <%= f.text_field :title, :id => "#{dom_id(measure_set)}_form_title" %>
       </div>
       <div class="remove-measure" >
         <% unless measure_set.new_record? %>
@@ -20,7 +20,7 @@
     <p><%= f.add_associated_link "Add New Measure", measure_set.measures.build, :container => "#{dom_id(measure_set)}_measures" %></p>
   </div>      
   <fieldset class="submit-area">
-    <%= f.submit 'Save' %> or
+    <%= f.submit 'Save', :id => "#{dom_id(measure_set)}_form_submit" %> or
     <%= link_to_function "Cancel", "$('#{dom_id(measure_set)}').show();$('#{dom_id(measure_set)}_form').hide();" %>
   </fieldset>
 <% end %>
