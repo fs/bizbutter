@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091028130905) do
+ActiveRecord::Schema.define(:version => 20091030135513) do
 
   create_table "comments", :force => true do |t|
     t.integer  "deal_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20091028130905) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.boolean  "published"
+    t.boolean  "published",  :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
