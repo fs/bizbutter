@@ -198,6 +198,7 @@ a:hover { text-decoration:none; }
 	padding:0 1.5em;
 	background:#777;
 	border:1px solid #777;
+	margin-top:1em;
         }
 	#sidebar p { color:#fff; margin-bottom:2em; line-height:1.5em; font-size:0.95em; }
 	#sidebar h3 {
