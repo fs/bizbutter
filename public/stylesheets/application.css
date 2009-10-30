@@ -285,6 +285,7 @@ div.create-new-deal { float:right; margin-top:100px; }
 	    #content div.form.deal .measure-set div.measures label { width:29em; display:block; float:left; }
 	    #content div.form.deal .measure-set div.measures input { width:24em; }
     #content div.show-deal div.form.deal .measure-set fieldset.submit-area { background:none; border:0; padding:0; margin:2em 0 1em; }
+    #new_measure_set a { color:#fff; }
     
 #content div.form.deal .measure-list { margin-bottom:1em; padding:1em; background:#ccc; }
     #content div.form.deal .measure-list .measure-list-title { overflow:hidden; }
