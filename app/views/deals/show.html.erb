@@ -28,8 +28,8 @@
           <%= render 'measure_set', :measure_set => @deal.measure_sets.build %>
         </div>
         
-        <div id="new_measure_set">
-          <p style="margin-bottom:2em;"><%= link_to_function "Add measure set", "$('new_measure_set').hide();$('new_measure_set_form').show();" %></p>
+        <div id="new_measure_set_button">
+          <p style="margin-bottom:2em;"><%= link_to_function "Add measure set", "$('new_measure_set_button').hide();$('new_measure_set_form').show();" %></p>
         </div>
       <% end %>
       
