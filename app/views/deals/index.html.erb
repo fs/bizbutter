@@ -1,32 +1,31 @@
-<%= render 'home/tabs', :locals => { :current_tab => 'my' } %>
-  <div class="home">
-      <div class="form">
-      
-      <table class="board" border="0" cellpadding="0" cellspacing="0">
-          <thead>
-              <tr>
-                <th class="deal">Deal</th>
-                <th class="comments">Comments</th>
-                <th class="date">Updated</th>
-                <th></th>
-              </tr>
-          </thead>
-          <tbody>
-              <% @deals.each do |deal| %>
-                <tr class="<%= cycle('first', 'second') -%>">
-                    <td>
-                        <h3><%= link_to deal.title, deal_path(deal) %></h3>
-                    </td>
-                    <td>
-                        <p><%= link_to pluralize(deal.comments.length, 'comment'), deal_path(deal) + '#comments' %></p>
-                    </td>
-                    <td><%= time_ago_in_words deal.updated_at %> ago</td>
-                    <td><%= link_to 'Edit', edit_deal_path(deal) if current_user && current_user.id = deal.user_id %></td>
-                </tr>
-              <% end %>
-          </tbody>
-      </table>
-      <%= will_paginate @deals %>
-      </div>
+<% current_tab :deals %>
+
+<div class="home">
+  <div class="form">
+    <table class="board" border="0" cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th class="deal">Deal</th>
+          <th class="comments">Comments</th>
+          <th class="date">Updated</th>
+          <th class="edit"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% for deal in @deals %>
+        <tr class="<%= cycle 'first', 'second' %>">
+          <td>
+            <h3><%= link_to h(deal.title), deal_path(deal) %></h3>
+          </td>
+          <td>
+            <p><%= link_to pluralize(deal.comments.count, 'comment'), deal_path(deal, :anchor => 'comments') %></p>
+          </td>
+          <td><%= time_ago_in_words deal.updated_at %> ago</td>
+          <td><%= link_to 'Edit', edit_deal_path(deal) if deal.editable_by?(current_user) %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @deals %>
   </div>
 </div>

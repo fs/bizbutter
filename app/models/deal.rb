@@ -11,6 +11,6 @@ class Deal < ActiveRecord::Base
   has_many :comments
   
   def editable_by? (user)
-    user && user.id == self.user.id
+    user && user.id == self.user_id
   end  
 end

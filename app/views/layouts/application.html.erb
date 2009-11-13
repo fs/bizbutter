@@ -11,37 +11,54 @@
     <div id="container">
       <div id="top-menu">
         <ul>
-	<% if current_user %>
-	  <li class="first"><%= current_user.email %></li>
-	  <li><a href="/sign_out">Log Out</a></li>
-	<% else %>
-	  <li class="first"><a href="/session/new">Log In</a></li>
-	  <li><a href="/users/new">Sign Up</a></li>
-	<% end %>
-	</ul>
-	<%- flash.each do |name, msg| -%>
-	  <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
-	<%- end -%> 
-	<% if session[:deals] && !session[:deals].empty? %>  <div class="notice">You have created <%= pluralize session[:deals].length, 'deal' %>. Please log in or sign up to manage them.</div><% end %>
+          <% if current_user %>
+          <li class="first"><%= current_user.email %></li>
+          <li><a href="/sign_out">Log Out</a></li>
+          <% else %>
+          <li class="first"><a href="/session/new">Log In</a></li>
+          <li><a href="/users/new">Sign Up</a></li>
+          <% end %>
+        </ul>
+      	<% flash.each do |name, msg| -%>
+      	  <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'notice' %>
+      	<% end -%> 
+      	<% unless session[:deals].blank? -%>
+      	  <div class="notice">
+      	    You have created <%= pluralize session[:deals].length, 'deal' %>.
+      	    Please log in or sign up to manage your deals.
+      	  </div>
+      	<% end -%>
       </div>
       <div id="header">
         <div class="logo">
           <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
         </div>
-	<div class="create-new-deal">
+        <div class="create-new-deal">
           <%= link_to 'Create a new deal', new_deal_path %>
-	</div>
+        </div>
       </div>
       <div id="wrap">
-        <%= yield %>
+        <div id="navigation">
+          <ul>
+            <li <%= 'class="current"' if @current_tab == :home %>><a href="/">All Deals</a></li>
+            <% if !current_user %>
+            <li <%= 'class="current"' if @current_tab == :join %>><a href="/session/new">Join Us</a></li>
+            <% else %>
+            <li <%= 'class="current"' if @current_tab == :deals %>><a href="/deals">My Deals</a></li>
+            <% end %>
+          </ul>
+        </div>
+        <div id="content">
+          <%= yield %>
+        </div>
       </div>
       <div id="footer">
-	<div class="logo">
-	  <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
-	</div>
-	<p class="validator">
-	  <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-	</p>
+        <div class="logo">
+          <a href="/"><img src="/images/logo.png" alt="Sustainable Communities" title="Sustainable Communities" /></a>
+        </div>
+        <p class="validator">
+          <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+        </p>
       </div>
     </div>
   </body>

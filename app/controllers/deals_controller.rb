@@ -51,5 +51,4 @@ class DealsController < ApplicationController
   def get_deal
     @deal = Deal.find(params[:id])
   end
-  
 end

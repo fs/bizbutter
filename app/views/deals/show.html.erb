@@ -1,74 +1,73 @@
-<%= render 'home/tabs', :locals => { :current_tab => 'all' } %>
-  <div class="show-deal">
-    <div class="form deal">
-      <div class="new-deal-title">
-        <h1><%= @deal.title %></h1>
-        <div class="edit">
-          <%= link_to 'Edit', edit_deal_path(@deal) if @deal.editable_by?(current_user) %>
-        </div>
+<% current_tab :home %>
+
+<div class="show-deal">
+  <div class="form deal">
+    <div class="new-deal-title">
+      <h1><%= @deal.title %></h1>
+      <div class="edit">
+        <%= link_to 'Edit', edit_deal_path(@deal) if @deal.editable_by?(current_user) %>
+      </div>
+    </div>
+    
+    <p class="deal-content">
+      <em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em>
+    </p>
+    
+    <%= content_tag :p, 'Draft', :class => 'published' unless @deal.published? %>
+    <p class="date">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
+    
+    <h2>Measures</h2>
+    
+    <% unless @deal.measure_sets.blank? %>
+      <%= render @deal.measure_sets %>
+    <% else %>
+      <p>There are no measures yet.</p>
+    <% end %>
+  
+    <% if @deal.editable_by?(current_user) %>
+      <div id="new_measure_set_form" style="display: none;">
+        <%= render 'measure_set', :measure_set => @deal.measure_sets.build %>
       </div>
       
-      <p class="deal-content">
-        <em><%= @deal.content.blank? ? 'There is no description given for this deal...' : @deal.content %></em>
-      </p>
-      
-      <%= content_tag :p, 'Draft', :class => 'published' unless @deal.published? %>
-      <p class="date">modified <%= time_ago_in_words @deal.updated_at %> ago</p>
-      
-      <h2>Measures</h2>
-      
-      <% unless @deal.measure_sets.blank? %>
-        <%= render @deal.measure_sets %>
-      <% else %>
-        <p>There are no measures yet.</p>
-      <% end %>
+      <div id="new_measure_set_button">
+        <p style="margin-bottom:2em;"><%= link_to_function "Add measure set", "$('new_measure_set_button').hide();$('new_measure_set_form').show();" %></p>
+      </div>
+    <% end %>
     
-      <% if @deal.editable_by?(current_user) %>
-        <div id="new_measure_set_form" style="display: none;">
-          <%= render 'measure_set', :measure_set => @deal.measure_sets.build %>
-        </div>
-        
-        <div id="new_measure_set_button">
-          <p style="margin-bottom:2em;"><%= link_to_function "Add measure set", "$('new_measure_set_button').hide();$('new_measure_set_form').show();" %></p>
-        </div>
-      <% end %>
-      
-      <h2><a name="comments" style="text-decoration:none; color:#000;">Comments</a></h2>
-      
-      <% unless @deal.comments.blank? %>
-        <% @deal.comments.each do |comment| %>
-          <div class="comment-item <%= cycle 'first', 'second' %>">
-            <% if comment.user %>
-            <div style="overflow:hidden;">
-              <p class="email" style="float:left; font-weight:bold; "><%= mail_to comment.user.email %> at <%= comment.created_at.to_s(:short) %>:</p>
-              <% if comment.editable_by?(current_user) %>
-              <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", [@deal, comment], :method => 'delete', :confirm => 'Are you sure want to delete this comment?' %></p>
-              <% end %>
-            </div>
+    <h2><a name="comments" style="text-decoration:none; color:#000;">Comments</a></h2>
+    
+    <% unless @deal.comments.blank? %>
+      <% @deal.comments.each do |comment| %>
+        <div class="comment-item <%= cycle 'first', 'second' %>">
+          <% if comment.user %>
+          <div style="overflow:hidden;">
+            <p class="email" style="float:left; font-weight:bold; "><%= mail_to comment.user.email %> at <%= comment.created_at.to_s(:short) %>:</p>
+            <% if comment.editable_by?(current_user) %>
+            <p class="delete-comment" style="float:right;"><%= link_to "Delete comment", [@deal, comment], :method => 'delete', :confirm => 'Are you sure want to delete this comment?' %></p>
             <% end %>
-            <div class="comment-content">
-              <p>
-                <%= comment.content %>
-              </p>
-            </div>
           </div>
-        <% end %>
-      <% else %>
-        <p>No one has commented yet.</p>
+          <% end %>
+          <div class="comment-content">
+            <p>
+              <%= comment.content %>
+            </p>
+          </div>
+        </div>
       <% end %>
+    <% else %>
+      <p>No one has commented yet.</p>
+    <% end %>
 
-      <% if current_user %>
-        <% form_for [@deal, Comment.new] do |f| %>
-        <fieldset>
-          <%= f.label :content, "Post your comment:" %>
-          <%= f.text_area :content %>
-        </fieldset>
-        <fieldset class="submit-area">
-          <%= f.submit 'Post comment' %>
-        </fieldset>
-        <% end %>
+    <% if current_user %>
+      <% form_for [@deal, Comment.new] do |f| %>
+      <fieldset>
+        <%= f.label :content, "Post your comment:" %>
+        <%= f.text_area :content %>
+      </fieldset>
+      <fieldset class="submit-area">
+        <%= f.submit 'Post comment' %>
+      </fieldset>
       <% end %>
-    </div>
+    <% end %>
   </div>
-
 </div>
